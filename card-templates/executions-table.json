@@ -1,0 +1,60 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Jumbotron",
+      "title": "Executions Viewer",
+      "subtitle": "All executions"
+    },
+    {
+      "type": "Table",
+      "arrayPath": "executions",
+      "columns": [
+        {
+          "title": "Execution name",
+          "field": "executionName"
+        },
+        {
+          "title": "Current state name",
+          "field": "currentStateName"
+        },
+        {
+          "title": "Current resource",
+          "field": "currentResource"
+        },
+        {
+          "title": "State machine name",
+          "field": "stateMachineName"
+        },
+        {
+          "title": "Status",
+          "field": "status"
+        },
+        {
+          "title": "Parent execution",
+          "field": "parentExecution"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Close"
+    }
+  ],
+  "templateMeta": {
+    "name": "executions-table",
+    "title": "Executions Viewer",
+    "category": "system"
+  },
+  "meta": {
+    "generatedOn": "4/3/2019, 12:37:37 PM",
+    "generatedWith": "@wmfs/tymly-scaffold 0.0.0-semantically-released",
+    "data": {
+      "modelName": "execution"
+    }
+  }
+}

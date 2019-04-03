@@ -1,0 +1,21 @@
+{
+  "namespace": "system",
+  "name": "systems-blueprint",
+  "version": "1.0.0",
+  "label": "",
+  "organisation": "West Midlands Fire Service",
+  "author": "jez",
+  "description": "System management",
+  "categories": [],
+  "meta": {
+    "generatedOn": "4/3/2019, 12:30:50 PM",
+    "generatedWith": "@wmfs/tymly-scaffold 0.0.0-semantically-released",
+    "domains": [
+      "general",
+      "computing"
+    ],
+    "uses": [
+      "../../packages/tymly-core/lib/plugin/blueprints/tymly-blueprint"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "Comment": "Details of all failed executions",
+  "name": "Failed Executions",
+
+  "version": "1.0",
+  "categories": [
+    "system"
+  ],
+  "instigators": [
+    "user"
+  ],
+
+  "StartAt": "Finding",
+  "States": {
+    "Finding": {
+      "Type": "Task",
+      "InputPath": "$",
+      "Resource": "module:finding",
+      "ResourceConfig": {
+        "modelId": "execution",
+        "filter": {
+	  "where": {
+	    "status": {
+	      "equals": "FAILED"
+	    }
+	  }
+	}
+      },
+      "ResultPath": "$.execution",
+      "Next": "AwaitingHumanInput"
+    },
+    "AwaitingHumanInput": {
+      "Type": "Task",
+      "Resource": "module:awaitingHumanInput",
+      "ResourceConfig": {
+        "uiType": "form",
+        "uiName": "system_executionsTable",
+        "dataPath": "$"
+      },
+      "End": true
+    }
+  },
+
+  "restrictions": [
+    {
+      "roleId": "system_system",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+
+
+}
