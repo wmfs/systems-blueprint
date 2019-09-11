@@ -10,7 +10,7 @@
     },
     {
       "type": "Table",
-      "arrayPath": "executions",
+      "arrayPath": "data.executions",
       "columns": [
         {
           "title": "Execution name",
