@@ -1,3 +1,15 @@
+## [1.0.4](https://github.com/wmfs/systems-blueprint/compare/v1.0.3...v1.0.4) (2019-10-22)
+
+
+### 🐛 Bug Fixes
+
+* remove instigators from failed executions ([](https://github.com/wmfs/systems-blueprint/commit/8988dd3))
+
+
+### 🛠 Builds
+
+* **deps-dev:** update [@wmfs](https://github.com/wmfs) dev dependancies ([](https://github.com/wmfs/systems-blueprint/commit/3f09e56))
+
 ## [1.0.3](https://github.com/wmfs/systems-blueprint/compare/v1.0.2...v1.0.3) (2019-09-11)
 
 
