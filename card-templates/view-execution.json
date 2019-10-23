@@ -1,0 +1,52 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Jumbotron",
+      "title": "{{data.execution.current_state_name}}",
+      "subtitle": "{{data.execution._modified_by ? `${data.execution._modified_by} @ ` : ' '}}{{formatDate(data.execution._modified, 'DD/MM/YY HH:mm')}}"
+    },
+    {
+      "type": "FactSet",
+      "facts": [
+        {
+          "title": "Execution Name",
+          "value": "{{data.execution.execution_name}}"
+        },
+        {
+          "title": "Current Resource",
+          "value": "{{data.execution.current_resource}}"
+        },
+        {
+          "title": "State Machine Name",
+          "value": "{{data.execution.state_machine_name}}"
+        },
+        {
+          "title": "Status",
+          "value": "{{data.execution.status}}"
+        },
+        {
+          "title": "Context",
+          "value": "<pre>{{JSON.stringify(JSON.parse(data.execution.ctx), null, 2)}}</pre>"
+        },
+        {
+          "title": "Execution Options",
+          "value": "<pre>{{JSON.stringify(JSON.parse(data.execution.execution_options), null, 2)}}</pre>"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Close"
+    }
+  ],
+  "templateMeta": {
+    "name": "execution",
+    "title": "Execution",
+    "category": "system"
+  }
+}

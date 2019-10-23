@@ -1,27 +1,18 @@
 {
-  "Comment": "Details of all failed executions",
-  "name": "Failed Executions",
+  "Comment": "View Execution",
+  "name": "View Execution",
   "version": "1.0",
   "categories": [
     "system"
   ],
-  "StartAt": "Finding",
+  "StartAt": "GetExecution",
   "States": {
-    "Finding": {
+    "GetExecution": {
       "Type": "Task",
-      "InputPath": "$",
-      "Resource": "module:finding",
+      "Resource": "module:runFunction",
       "ResourceConfig": {
-        "modelId": "execution",
-        "filter": {
-	  "where": {
-	    "status": {
-	      "equals": "FAILED"
-	    }
-	  }
-	}
+        "functionName": "getExecution"
       },
-      "ResultPath": "$.execution",
       "Next": "AwaitingHumanInput"
     },
     "AwaitingHumanInput": {
@@ -29,7 +20,7 @@
       "Resource": "module:awaitingHumanInput",
       "ResourceConfig": {
         "uiType": "form",
-        "uiName": "system_executionsTable",
+        "uiName": "system_viewExecution",
         "dataPath": "$"
       },
       "End": true

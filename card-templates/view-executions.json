@@ -1,0 +1,143 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "hooks": {
+    "afterLeave": {
+      "actions": [
+        {
+          "type": "Action.StoreData"
+        }
+      ]
+    }
+  },
+  "body": [
+    {
+      "type": "Jumbotron",
+      "title": "Executions"
+    },
+    {
+      "id": "executions",
+      "type": "Input.ApiLookup",
+      "buttonText": "Find Executions",
+      "endpoint": {
+        "name": "system_getExecutions_1_0"
+      },
+      "ctxPaths": {
+        "results": "results",
+        "totalHits": "results.length"
+      },
+      "parametersCard": {
+        "type": "AdaptiveCard",
+        "version": "1.0",
+        "body": [
+          {
+            "id": "view",
+            "title": "View",
+            "type": "Input.ChoiceSet",
+            "spacing": "medium",
+            "value": "MOST_RECENT",
+            "choices": [
+              {
+                "title": "Most Recent",
+                "value": "MOST_RECENT"
+              },
+              {
+                "title": "User",
+                "value": "USER"
+              },
+              {
+                "title": "Date",
+                "value": "DATE"
+              },
+              {
+                "title": "Status",
+                "value": "STATUS"
+              },
+              {
+                "title": "Execution",
+                "value": "EXECUTION"
+              }
+            ]
+          },
+          {
+            "showWhen": "data.executions.params.view === 'USER'",
+            "id": "userId",
+            "type": "Input.Text",
+            "title": "User ID",
+            "spacing": "medium"
+          },
+          {
+            "showWhen": "data.executions.params.view === 'DATE'",
+            "id": "date",
+            "type": "Input.Date",
+            "title": "Date",
+            "spacing": "medium"
+          },
+          {
+            "showWhen": "data.executions.params.view === 'STATUS'",
+            "id": "status",
+            "type": "Input.ChoiceSet",
+            "title": "Status",
+            "value": "RUNNING",
+            "choices": [
+              {
+                "title": "Running",
+                "value": "RUNNING"
+              },
+              {
+                "title": "Failed",
+                "value": "FAILED"
+              },
+              {
+                "title": "Succeeded",
+                "value": "SUCCEEDED"
+              }
+            ]
+          },
+          {
+            "showWhen": "data.executions.params.view === 'EXECUTION'",
+            "id": "executionName",
+            "type": "Input.Text",
+            "title": "Execution Name",
+            "spacing": "medium"
+          }
+        ]
+      },
+      "resultsCard": {
+        "type": "AdaptiveCard",
+        "version": "1.0",
+        "body": [
+          {
+            "type": "TextBlock",
+            "text": "{{data.executions.summary.totalHits}} result{{data.executions.summary.totalHits > 1 ? 's' : ''}} found",
+            "weight": "lighter",
+            "size": "small"
+          },
+          {
+            "id": "executionsList",
+            "type": "List",
+            "arrayPath": "data.executions.results",
+            "showLaunches": true,
+            "templates": {
+              "label": "{{item.current_state_name}}",
+              "sublabel": "{{item.state_machine_name}}",
+              "stamp": "{{item._modified_by ? `${item._modified_by} @ ` : ' '}}{{formatDate(item._modified, 'DD/MM/YY HH:mm')}}"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Close"
+    }
+  ],
+  "templateMeta": {
+    "name": "executions",
+    "title": "Executions",
+    "category": "system"
+  }
+}
