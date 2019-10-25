@@ -3,11 +3,7 @@
   "analyzeCommits": {
     "preset": "angular",
     "releaseRules": [
-      {
-        "type": "build",
-        "scope": "deps",
-        "release": "minor"
-      }
+      {"type": "build", "scope":"deps", "release": "minor"}
     ]
   },
   "verifyConditions": [
@@ -25,20 +21,22 @@
     },
     {
       "path": "@semantic-release/git",
-      "assets": [
-        "CHANGELOG.md"
-      ]
+      "assets": ["CHANGELOG.md"]
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "echo 'VERSION=${nextRelease.version}' > .version"
     },
     "@semantic-release/npm"
   ],
   "publish": [
     "@semantic-release/npm",
-    "@semantic-release/github"
+    "@semantic-release/github",
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "./version_blueprint"
+    }
   ],
-  "success": [
-    "@semantic-release/github"
-  ],
-  "fail": [
-    "@semantic-release/github"
-  ]
+  "success": ["@semantic-release/github"],
+  "fail": ["@semantic-release/github"]
 }
