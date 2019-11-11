@@ -1,0 +1,15 @@
+{
+  "title": "Tour Status",
+  "description": "Data on completed tours",
+  "primaryKey": [
+    "userId"
+  ],
+  "properties": {
+    "completed": {
+      "type": "boolean"
+    },
+    "userId": {
+      "type": "string"
+    }
+  }
+}
