@@ -1,5 +1,5 @@
 {
-  "Comment": "Details of all failed executions",
+  "Comment": "Details of tours completed",
   "name": "Mark Tour Complete",
   "version": "1.0",
   "categories": [
@@ -12,7 +12,7 @@
       "Resource": "module:setContextData",
       "ResourceConfig": {
         "$.tourData.completed": "$.completed",
-        "$.tourData.userId": "$.userId"
+        "$.tourData.userId": "$USERID"
       },
       "Next": "Upsert"
     },
