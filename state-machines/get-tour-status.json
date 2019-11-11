@@ -9,7 +9,7 @@
   "States": {
     "GetTourData": {
       "Type": "Task",
-      "InputPath": "$USERID",
+      "InputPath": "$.userId",
       "Resource": "module:findingById",
       "ResourceConfig": {
         "modelId": "tourStatus"
