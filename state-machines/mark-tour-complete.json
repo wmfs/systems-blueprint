@@ -1,0 +1,38 @@
+{
+  "Comment": "Details of all failed executions",
+  "name": "Mark Tour Complete",
+  "version": "1.0",
+  "categories": [
+    "system"
+  ],
+  "StartAt": "SetTourData",
+  "States": {
+    "SetTourData": {
+      "Type": "Task",
+      "Resource": "module:setContextData",
+      "ResourceConfig": {
+        "$.tourData.completed": "$.completed",
+        "$.tourData.userId": "$.userId"
+      },
+      "Next": "Upsert"
+    },
+    "Upsert": {
+      "Type": "Task",
+      "InputPath": "$.tourData",
+      "Resource": "module:upserting",
+      "ResourceConfig": {
+        "modelId": "tourStatus"
+      },
+      "ResultPath": "$.tour",
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "system_system",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
