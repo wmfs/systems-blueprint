@@ -1,3 +1,17 @@
+## [1.1.1](https://github.com/wmfs/systems-blueprint/compare/v1.1.0...v1.1.1) (2019-11-14)
+
+
+### 🐛 Bug Fixes
+
+* no restrictions on complete tour ([97815d5](https://github.com/wmfs/systems-blueprint/commit/97815d5f443b4e6999c874382801857b2e2bd28d))
+* no restrictions on get tour ([15b109e](https://github.com/wmfs/systems-blueprint/commit/15b109ec2065041e95898cbab8f11c2c8ee01122))
+
+
+### ♻️ Chores
+
+* update semantic-release config [ch27] ([310e9b2](https://github.com/wmfs/systems-blueprint/commit/310e9b28167c4bbae8c65d025ac0186d616f7abc))
+* **version:** blueprint 1.1.0 [skip ci] ([82260ae](https://github.com/wmfs/systems-blueprint/commit/82260ae8e4b215e3e59a26d0e1ed3b2eb7f75cc9))
+
 # [1.1.0](https://github.com/wmfs/systems-blueprint/compare/v1.0.4...v1.1.0) (2019-11-11)
 
 
