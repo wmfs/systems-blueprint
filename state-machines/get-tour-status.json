@@ -20,7 +20,7 @@
   },
   "restrictions": [
     {
-      "roleId": "system_system",
+      "roleId": "$everyone",
       "allows": [
         "*"
       ]
