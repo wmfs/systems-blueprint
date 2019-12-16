@@ -1,0 +1,40 @@
+{
+  "Comment": "Clear users cache",
+  "name": "Clear users cache",
+  "Version": "1.0",
+  "version": "1.0",
+  "categories": [
+    "system"
+  ],
+  "instigators": [
+    "user"
+  ],
+  "StartAt": "AwaitingHumanInput",
+  "States": {
+    "AwaitingHumanInput": {
+      "Type": "Task",
+      "Resource": "module:awaitingHumanInput",
+      "ResourceConfig": {
+        "uiName": "system_clearUsersCache",
+        "dataPath": "$"
+      },
+      "Next": "ClearUsersCache"
+    },
+    "ClearUsersCache": {
+      "Type": "Task",
+      "Resource": "module:runFunction",
+      "ResourceConfig": {
+        "functionName": "clearUsersCache"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "tymly_rbacAdmin",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
