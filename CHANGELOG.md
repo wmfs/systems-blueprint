@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/wmfs/systems-blueprint/compare/v1.1.1...v1.2.0) (2019-12-16)
+
+
+### ✨ Features
+
+* Create form to clear users cache within Tymly [ch234] ([7a6da28](https://github.com/wmfs/systems-blueprint/commit/7a6da28955f22800450e5940392ad8342eb7d0ee))
+
 ## [1.1.1](https://github.com/wmfs/systems-blueprint/compare/v1.1.0...v1.1.1) (2019-11-14)
 
 
