@@ -1,0 +1,64 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Subject",
+      "weight": "bolder",
+      "size": "medium"
+    },
+    {
+      "type": "TextBlock",
+      "text": "{{data.feedback.subject}}",
+      "wrap": true,
+      "weight": "lighter"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Body",
+      "weight": "bolder",
+      "size": "medium"
+    },
+    {
+      "type": "TextBlock",
+      "text": "{{data.feedback.body}}",
+      "wrap": true,
+      "weight": "lighter"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Created By",
+      "weight": "bolder",
+      "size": "medium"
+    },
+    {
+      "type": "TextBlock",
+      "text": "{{data.feedback.createdBy}}",
+      "weight": "lighter"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Created At",
+      "weight": "bolder",
+      "size": "medium"
+    },
+    {
+      "type": "TextBlock",
+      "text": "{{formatDate(data.feedback.created, 'DD MMM YYYY HH:mm')}}",
+      "weight": "lighter"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Close"
+    }
+  ],
+  "templateMeta": {
+    "name": "feedback-view-one",
+    "title": "Feedback",
+    "category": "system"
+  }
+}

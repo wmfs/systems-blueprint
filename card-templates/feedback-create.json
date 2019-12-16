@@ -1,0 +1,44 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Jumbotron",
+      "title": "Feedback",
+      "subtitle": "Use this form to provide feedback about Tymly to the Business Analyst. If you have any issues/bugs please raise them with ICT Service Desk."
+    },
+    {
+      "type": "Input.Text",
+      "id": "subject",
+      "title": "Subject",
+      "validation": {
+        "required": true
+      }
+    },
+    {
+      "type": "Input.Text",
+      "id": "body",
+      "title": "Body",
+      "isMultiline": true,
+      "validation": {
+        "required": true
+      }
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Close"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Submit"
+    }
+  ],
+  "templateMeta": {
+    "name": "feedback-create",
+    "title": "Feedback",
+    "category": "system"
+  }
+}

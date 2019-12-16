@@ -1,0 +1,36 @@
+{
+  "Comment": "Use this form to provide feedback about Tymly to the Business Analyst. If you have any issues/bugs please raise them with ICT Service Desk.",
+  "name": "Create Feedback",
+  "version": "1.0",
+  "categories": [
+    "system"
+  ],
+  "StartAt": "AwaitingHumanInput",
+  "States": {
+    "AwaitingHumanInput": {
+      "Type": "Task",
+      "Resource": "module:awaitingHumanInput",
+      "ResourceConfig": {
+        "uiType": "form",
+        "uiName": "system_feedbackCreate"
+      },
+      "Next": "Upserting"
+    },
+    "Upserting": {
+      "Type": "Task",
+      "Resource": "module:upserting",
+      "ResourceConfig": {
+        "modelId": "feedback"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "$authenticated",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
