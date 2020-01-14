@@ -23,7 +23,31 @@
       "parametersCard": {
         "type": "AdaptiveCard",
         "version": "1.0",
-        "body": []
+        "body": [
+          {
+            "id": "blueprint",
+            "type": "Input.Text",
+            "title": "Blueprint"
+          },
+          {
+            "showWhen": "data.notifyLookup.params.blueprint",
+            "id": "template",
+            "type": "Input.Text",
+            "title": "Template"
+          },
+          {
+            "id": "createdBy",
+            "type": "Input.Text",
+            "title": "Created By"
+          },
+          {
+            "id": "createdAt",
+            "type": "Input.Date",
+            "title": "Created Date",
+            "max": "$TODAY",
+            "clearable": true
+          }
+        ]
       },
       "resultsCard": {
         "type": "AdaptiveCard",
