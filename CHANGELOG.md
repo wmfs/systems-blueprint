@@ -1,3 +1,26 @@
+# [1.3.0](https://github.com/wmfs/systems-blueprint/compare/v1.2.0...v1.3.0) (2020-01-14)
+
+
+### ✨ Features
+
+* view gov uk notifications ([6dba9e4](https://github.com/wmfs/systems-blueprint/commit/6dba9e4acd05f717814cce804190aaaca92841be))
+
+
+### 🛠 Builds
+
+* **deps-dev:** bump [@semantic-release](https://github.com/semantic-release)/changelog from 3.0.4 to 3.0.6 ([0d0b1ce](https://github.com/wmfs/systems-blueprint/commit/0d0b1cede7b977092b88c6b2124ca9149ba5010f))
+* **deps-dev:** bump [@semantic-release](https://github.com/semantic-release)/exec from 3.3.7 to 3.3.8 ([9b04bfd](https://github.com/wmfs/systems-blueprint/commit/9b04bfd8cafeed1163d3f8de8630ed69c6d245c3))
+* **deps-dev:** bump [@semantic-release](https://github.com/semantic-release)/git from 7.0.16 to 7.0.18 ([d0bde70](https://github.com/wmfs/systems-blueprint/commit/d0bde70865a3bc5a379e9e293b0136affb9be579))
+* **deps-dev:** bump mocha from 6.2.2 to 7.0.0 ([e8c9370](https://github.com/wmfs/systems-blueprint/commit/e8c93705101d11693f68b1545034305f6998924a))
+* **deps-dev:** bump nyc from 14.1.1 to 15.0.0 ([a94324b](https://github.com/wmfs/systems-blueprint/commit/a94324b95ec3ec18175121795833dfa4fd6c3ec5))
+* **deps-dev:** bump semantic-release from 15.13.27 to 15.14.0 ([e3e7344](https://github.com/wmfs/systems-blueprint/commit/e3e734429f62f235a54992c27d79b7ed02f34f77))
+* **deps-dev:** bump standard from 12.0.1 to 14.3.1 ([1b1847a](https://github.com/wmfs/systems-blueprint/commit/1b1847ab22e7451340c3c8d71b77ed1206f1a65d))
+
+
+### ♻️ Chores
+
+* [ch279] ([26aa24b](https://github.com/wmfs/systems-blueprint/commit/26aa24b809c73aac15ff16160ce196fb24386414))
+
 # [1.2.0](https://github.com/wmfs/systems-blueprint/compare/v1.1.1...v1.2.0) (2019-12-16)
 
 
