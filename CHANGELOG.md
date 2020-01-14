@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/wmfs/systems-blueprint/compare/v1.3.0...v1.4.0) (2020-01-14)
+
+
+### ✨ Features
+
+* add filters for searching gov uk notifications ([2930729](https://github.com/wmfs/systems-blueprint/commit/2930729a7e57470af5826d1c613e14f1bc3cfb68))
+* display the amount of results found for gov uk notifications ([86ca1e3](https://github.com/wmfs/systems-blueprint/commit/86ca1e3ee78f850d49c5a8f83e2b5549762e93bb))
+
 # [1.3.0](https://github.com/wmfs/systems-blueprint/compare/v1.2.0...v1.3.0) (2020-01-14)
 
 
