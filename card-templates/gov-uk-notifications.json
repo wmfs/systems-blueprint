@@ -18,7 +18,7 @@
       },
       "ctxPaths": {
         "results": "results",
-        "totalHits": "results.length"
+        "totalHits": "totalHits"
       },
       "parametersCard": {
         "type": "AdaptiveCard",
@@ -29,6 +29,12 @@
         "type": "AdaptiveCard",
         "version": "1.0",
         "body": [
+          {
+            "type": "TextBlock",
+            "text": "{{data.notifyLookup.summary.totalHits}} result{{data.notifyLookup.summary.totalHits === 1 ? '' : 's'}} found",
+            "weight": "lighter",
+            "size": "small"
+          },
           {
             "id": "notifyList",
             "type": "List",

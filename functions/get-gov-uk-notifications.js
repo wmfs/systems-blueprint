@@ -6,6 +6,7 @@ module.exports = function () {
 
     const client = env.bootedServices.storage.client
 
+    const totalHitsRes = await client.query(`SELECT COUNT(*) FROM tymly.gov_uk_notifications;`)
     const res = await client.query(`SELECT * FROM tymly.gov_uk_notifications ORDER BY _modified DESC LIMIT ${limit} OFFSET ${offset};`)
 
     const results = []
@@ -20,6 +21,6 @@ module.exports = function () {
       results.push(row)
     }
 
-    return { results }
+    return { results, totalHits: totalHitsRes.rows[0].count }
   }
 }
