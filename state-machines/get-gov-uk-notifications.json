@@ -1,0 +1,27 @@
+{
+  "Comment": "Get GOV UK Notify Notifications",
+  "name": "Get GOV UK Notify Notifications",
+  "version": "1.0",
+  "categories": [
+    "system"
+  ],
+  "StartAt": "GetData",
+  "States": {
+    "GetData": {
+      "Type": "Task",
+      "Resource": "module:runFunction",
+      "ResourceConfig": {
+        "functionName": "getGovUkNotifications"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "$authenticated",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
