@@ -1,0 +1,92 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Jumbotron",
+      "title": "GOV UK Notification"
+    },
+    {
+      "type": "Container",
+      "showWhen": "data.messageStatus",
+      "items": [
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "GOV UK Notify Message Status",
+              "value": "{{ data.messageStatus.status }}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "Notify ID",
+              "value": "{{ data.notifyId }}"
+            },
+            {
+              "title": "Status Code",
+              "value": "{{ data.statusCode }}"
+            },
+            {
+              "title": "Blueprint",
+              "value": "{{ data.blueprint }}"
+            },
+            {
+              "title": "Template Name",
+              "value": "{{ data.templateName }}"
+            },
+            {
+              "title": "Template ID",
+              "value": "{{ data.template }}"
+            },
+            {
+              "title": "Recipient",
+              "value": "{{ data.recipient }}"
+            },
+            {
+              "title": "Error",
+              "value": "{{ data.error }}"
+            },
+            {
+              "title": "Created By",
+              "value": "{{ data.createdBy }}"
+            },
+            {
+              "title": "Created At",
+              "value": "{{ formatDate(data.created, 'DD/MM/YY HH:mm') }}"
+            }
+          ]
+        },
+        {
+          "type": "TextBlock",
+          "text": "Input",
+          "weight": "bolder"
+        },
+        {
+          "type": "TextBlock",
+          "text": "<pre class=\"q-ma-none\">{{ JSON.stringify(data.input, null, 2) }}</pre>"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Close"
+    }
+  ],
+  "templateMeta": {
+    "name": "gov-uk-notifications",
+    "title": "GOV UK Notifications",
+    "category": "system"
+  }
+}

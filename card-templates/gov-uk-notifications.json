@@ -1,0 +1,100 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Jumbotron",
+      "title": "GOV UK Notifications"
+    },
+    {
+      "id": "notifyLookup",
+      "type": "Input.ApiLookup",
+      "showPagination": true,
+      "resultsPerPage": 10,
+      "buttonText": "Search",
+      "endpoint": {
+        "name": "system_getGovUkNotifications_1_0"
+      },
+      "ctxPaths": {
+        "results": "results",
+        "totalHits": "totalHits"
+      },
+      "parametersCard": {
+        "type": "AdaptiveCard",
+        "version": "1.0",
+        "body": [
+          {
+            "id": "blueprint",
+            "type": "Input.Text",
+            "title": "Blueprint"
+          },
+          {
+            "showWhen": "data.notifyLookup.params.blueprint",
+            "id": "template",
+            "type": "Input.Text",
+            "title": "Template"
+          },
+          {
+            "id": "createdBy",
+            "type": "Input.Text",
+            "title": "Created By"
+          },
+          {
+            "id": "createdAt",
+            "type": "Input.Date",
+            "title": "Created Date",
+            "max": "$TODAY",
+            "clearable": true
+          }
+        ]
+      },
+      "resultsCard": {
+        "type": "AdaptiveCard",
+        "version": "1.0",
+        "body": [
+          {
+            "type": "TextBlock",
+            "text": "{{data.notifyLookup.summary.totalHits}} result{{data.notifyLookup.summary.totalHits === 1 ? '' : 's'}} found",
+            "weight": "lighter",
+            "size": "small"
+          },
+          {
+            "id": "notifyList",
+            "type": "List",
+            "arrayPath": "data.notifyLookup.results",
+            "clickToLaunch": true,
+            "showLaunches": true,
+            "templates": {
+              "label": "{{item.status_code}} {{item.blueprint}} - {{item.template_name}}",
+              "sublabel": [
+                "{{item._created_by}}",
+                "{{formatDate(item._created, 'DD/MM/YY HH:mm')}}"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Close"
+    }
+  ],
+  "templateMeta": {
+    "name": "gov-uk-notifications",
+    "title": "GOV UK Notifications",
+    "category": "system"
+  },
+  "hooks": {
+    "afterLeave": {
+      "actions": [
+        {
+          "type": "Action.StoreData"
+        }
+      ]
+    }
+  }
+}

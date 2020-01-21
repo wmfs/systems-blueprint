@@ -1,0 +1,32 @@
+{
+  "Comment": "View notifications sent via GOV UK Notify Service",
+  "name": "View GOV UK Notify Notifications",
+  "version": "1.0",
+  "categories": [
+    "system"
+  ],
+  "instigators": [
+    "user"
+  ],
+  "instigatorGroup": "app",
+  "StartAt": "AwaitingHumanInput",
+  "States": {
+    "AwaitingHumanInput": {
+      "Type": "Task",
+      "Resource": "module:awaitingHumanInput",
+      "ResourceConfig": {
+        "uiName": "system_govUkNotifications",
+        "dataPath": "$"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "system_system",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
