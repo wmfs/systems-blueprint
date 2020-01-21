@@ -19,7 +19,7 @@ module.exports = function () {
     const end = `order by _created desc limit ${limit} offset ${offset}`
 
     const wheres = {
-      ALL: ``,
+      ALL: '',
       USER: `where execution_options::jsonb->>'userId' = '${event.userId}'`,
       DATE: `where _created::date = '${event.date}'`,
       STATUS: `where status = '${event.status}'`,
