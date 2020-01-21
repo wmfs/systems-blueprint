@@ -19,13 +19,15 @@
     {
       "id": "executions",
       "type": "Input.ApiLookup",
+      "showPagination": true,
+      "resultsPerPage": 10,
       "buttonText": "Find Executions",
       "endpoint": {
         "name": "system_getExecutions_1_0"
       },
       "ctxPaths": {
         "results": "results",
-        "totalHits": "results.length"
+        "totalHits": "totalHits"
       },
       "parametersCard": {
         "type": "AdaptiveCard",
@@ -36,11 +38,11 @@
             "title": "View",
             "type": "Input.ChoiceSet",
             "spacing": "medium",
-            "value": "MOST_RECENT",
+            "value": "ALL",
             "choices": [
               {
-                "title": "Most Recent",
-                "value": "MOST_RECENT"
+                "title": "All",
+                "value": "ALL"
               },
               {
                 "title": "User",
@@ -72,7 +74,8 @@
             "id": "date",
             "type": "Input.Date",
             "title": "Date",
-            "spacing": "medium"
+            "spacing": "medium",
+            "max": "$TODAY"
           },
           {
             "showWhen": "data.executions.params.view === 'STATUS'",
@@ -121,8 +124,10 @@
             "showLaunches": true,
             "templates": {
               "label": "{{item.current_state_name}}",
-              "sublabel": "{{item.state_machine_name}}",
-              "stamp": "{{item._modified_by ? `${item._modified_by} @ ` : ' '}}{{formatDate(item._modified, 'DD/MM/YY HH:mm')}}"
+              "sublabel": [
+                "{{item.state_machine_name}}",
+                "{{item._modified_by ? `${item._modified_by} @ ` : ' '}}{{formatDate(item._modified, 'DD/MM/YY HH:mm')}}"
+              ]
             }
           }
         ]

@@ -2,20 +2,35 @@ module.exports = function () {
   return async function (env, event) {
     const client = env.bootedServices.storage.client
 
-    const select = `select state_machine_name, execution_name, current_state_name, status, _modified_by, _modified from tymly.execution`
+    const offset = event.offset || 0
+    const limit = event.limit || 10
 
-    const queries = {
-      'MOST_RECENT': `${select} order by _created desc limit 30`,
-      'USER': `${select} where execution_options::jsonb->>'userId' = '${event.userId}' order by _created desc limit 50`,
-      'DATE': `${select} where _created::date = '${event.date}' order by _created desc`,
-      'STATUS': `${select} where status = '${event.status}' order by _created desc limit 50`,
-      'EXECUTION': `${select} where execution_name = '${event.executionName}'`
+    const columns = [
+      'state_machine_name',
+      'execution_name',
+      'current_state_name',
+      'status',
+      '_modified_by',
+      '_modified'
+    ]
+
+    const select = `select ${columns.join(', ')} from tymly.execution`
+    const end = `order by _created desc limit ${limit} offset ${offset}`
+
+    const wheres = {
+      'ALL': ``,
+      'USER': `where execution_options::jsonb->>'userId' = '${event.userId}'`,
+      'DATE': `where _created::date = '${event.date}'`,
+      'STATUS': `where status = '${event.status}'`,
+      'EXECUTION': `where execution_name = '${event.executionName}'`
     }
 
     let results = []
+    let totalHits = 0
 
     if (hasParams(event)) {
-      const query = queries[event.view]
+      const query = `${select} ${wheres[event.view]} ${end};`
+
       const queryResult = await client.query(query)
       results = queryResult.rows.map(r => {
         r.launches = [{
@@ -25,14 +40,17 @@ module.exports = function () {
         }]
         return r
       })
+
+      const totalHitsRes = await client.query(`select count(*) from tymly.execution ${wheres[event.view]};`)
+      totalHits = totalHitsRes.rows[0].count
     }
 
-    return { results }
+    return { results, totalHits }
   }
 }
 
 function hasParams (event) {
-  if (event.view === 'MOST_RECENT') return true
+  if (event.view === 'ALL') return true
   if (event.view === 'USER') return !!event.userId
   if (event.view === 'DATE') return !!event.date
   if (event.view === 'STATUS') return !!event.status
