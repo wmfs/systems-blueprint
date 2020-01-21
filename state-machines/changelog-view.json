@@ -5,10 +5,6 @@
   "categories": [
     "system"
   ],
-  "instigators": [
-    "user"
-  ],
-  "instigatorGroup": "app",
   "StartAt": "AwaitingHumanInput",
   "States": {
     "AwaitingHumanInput": {
