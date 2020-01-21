@@ -1,3 +1,32 @@
+# [1.5.0](https://github.com/wmfs/systems-blueprint/compare/v1.4.0...v1.5.0) (2020-01-21)
+
+
+### ✨ Features
+
+* better display execution labels ([eecea19](https://github.com/wmfs/systems-blueprint/commit/eecea196180cd0c93f8bc6c107e45c530cd9270d))
+* Create form to clear users cache within Tymly [ch234] ([306e1b8](https://github.com/wmfs/systems-blueprint/commit/306e1b8487d2b2945c5fe0f056f4b442a8c36d03))
+* enable pagination for viewing executions ([b2cfbf8](https://github.com/wmfs/systems-blueprint/commit/b2cfbf88db1e44c6b1a70f7ba74d02e10dbb3b8c))
+* view executions ([2f17cca](https://github.com/wmfs/systems-blueprint/commit/2f17cca7699aaec851a9c1271bfe045f2b276cf1))
+
+
+### 🐛 Bug Fixes
+
+* remove instigators from changelog/feedback views as we don't want them for now ([e6462e2](https://github.com/wmfs/systems-blueprint/commit/e6462e27ce7c583fc89573bc9cee735f0e09147c))
+
+
+### 🛠 Builds
+
+* **deps-dev:** bump conventional-changelog-metahub from 3.0.0 to 4.0.0 ([8728c84](https://github.com/wmfs/systems-blueprint/commit/8728c84a18d0bf2843ecbdafbfb6b25a279280a5))
+
+
+### 📦 Code Refactoring
+
+* add container to gov uk notify card ([d7043d6](https://github.com/wmfs/systems-blueprint/commit/d7043d64b6e2902c1a0ce8cba80f3a96d166f47e))
+* attempt view executions/changelog view/feedback to ba ([11359c0](https://github.com/wmfs/systems-blueprint/commit/11359c0f6f15f9df3359a814f963e46e7c9677b0))
+* remove clear users cache from this branch ([137d01a](https://github.com/wmfs/systems-blueprint/commit/137d01a6368a64ff22af4dec143e449773cafefd))
+* remove unnecessary quotes ([1b140c8](https://github.com/wmfs/systems-blueprint/commit/1b140c89f13923d0b62d0a28d16a2195f0523e1a))
+* Strings must use singlequote ([283d2c5](https://github.com/wmfs/systems-blueprint/commit/283d2c5ec7b566eb683f74cc5c65977e406eb638))
+
 # [1.4.0](https://github.com/wmfs/systems-blueprint/compare/v1.3.0...v1.4.0) (2020-01-14)
 
 
