@@ -10,6 +10,7 @@ module.exports = function () {
       'execution_name',
       'current_state_name',
       'status',
+      '_created_by',
       '_modified_by',
       '_modified'
     ]

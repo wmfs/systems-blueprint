@@ -125,8 +125,9 @@
             "templates": {
               "label": "{{item.current_state_name}}",
               "sublabel": [
-                "{{item.state_machine_name}}",
-                "{{item._modified_by ? `${item._modified_by} @ ` : ' '}}{{formatDate(item._modified, 'DD/MM/YY HH:mm')}}"
+                "{{ item.state_machine_name }}",
+                "{{ (item._created_by || item._modified_by) || 'No author specified' }}",
+                "{{ formatDate(item._modified, 'DD/MM/YY HH:mm') }}"
               ]
             }
           }
