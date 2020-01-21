@@ -1,6 +1,6 @@
 {
-  "Comment": "Details of all failed executions",
-  "name": "Failed Executions",
+  "Comment": "View feedback provided by users.",
+  "name": "View Feedback",
   "version": "1.0",
   "categories": [
     "system"
@@ -9,19 +9,12 @@
   "States": {
     "Finding": {
       "Type": "Task",
-      "InputPath": "$",
-      "Resource": "module:finding",
+      "InputPath": "$.id",
+      "Resource": "module:findingById",
       "ResourceConfig": {
-        "modelId": "execution",
-        "filter": {
-	  "where": {
-	    "status": {
-	      "equals": "FAILED"
-	    }
-	  }
-	}
+        "modelId": "feedback"
       },
-      "ResultPath": "$.execution",
+      "ResultPath": "$.feedback",
       "Next": "AwaitingHumanInput"
     },
     "AwaitingHumanInput": {
@@ -29,7 +22,7 @@
       "Resource": "module:awaitingHumanInput",
       "ResourceConfig": {
         "uiType": "form",
-        "uiName": "system_executionsTable",
+        "uiName": "system_feedbackViewOne",
         "dataPath": "$"
       },
       "End": true
@@ -37,7 +30,7 @@
   },
   "restrictions": [
     {
-      "roleId": "system_system",
+      "roleId": "system_businessAnalyst",
       "allows": [
         "*"
       ]

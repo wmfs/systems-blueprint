@@ -1,0 +1,20 @@
+{
+  "description": "Feedback from the user",
+  "type": "object",
+  "properties": {
+    "subject": {
+      "title": "Subject",
+      "type": "string",
+      "description": "Subject of the feedback message"
+    },
+    "body": {
+      "title": "Body",
+      "type": "string",
+      "description": "Body of the feedback message"
+    }
+  },
+  "required": [
+    "subject",
+    "body"
+  ]
+}

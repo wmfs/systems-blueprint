@@ -1,0 +1,29 @@
+{
+  "Comment": "View Tymly Changelogs",
+  "name": "View Tymly Changelogs",
+  "version": "1.0",
+  "categories": [
+    "system"
+  ],
+  "StartAt": "AwaitingHumanInput",
+  "States": {
+    "AwaitingHumanInput": {
+      "Type": "Task",
+      "Resource": "module:awaitingHumanInput",
+      "ResourceConfig": {
+        "uiType": "form",
+        "uiName": "system_changelogView",
+        "dataPath": "$"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "system_businessAnalyst",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
