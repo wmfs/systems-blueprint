@@ -1,3 +1,47 @@
+# [1.6.0](https://github.com/wmfs/systems-blueprint/compare/v1.5.0...v1.6.0) (2020-06-02)
+
+
+### ✨ Features
+
+* created registry keys view ([00621e3](https://github.com/wmfs/systems-blueprint/commit/00621e342ca034114fde576ca5d2577b8f328beb))
+
+
+### 🛠 Builds
+
+* **deps-dev:** bump [@semantic-release](https://github.com/semantic-release)/changelog from 3.0.6 to 5.0.0 ([d7d4644](https://github.com/wmfs/systems-blueprint/commit/d7d4644939089233b000578dc27e4f11010e7ef1))
+* **deps-dev:** bump [@semantic-release](https://github.com/semantic-release)/changelog from 5.0.0 to 5.0.1 ([6f819c7](https://github.com/wmfs/systems-blueprint/commit/6f819c751ec6e6a8466c392e89eac144738f6f42))
+* **deps-dev:** bump [@semantic-release](https://github.com/semantic-release)/exec from 3.3.8 to 5.0.0 ([f853094](https://github.com/wmfs/systems-blueprint/commit/f853094c9866d805e7bd3941d05b6346786237b7))
+* **deps-dev:** bump [@semantic-release](https://github.com/semantic-release)/git from 7.0.18 to 9.0.0 ([fc5ea5b](https://github.com/wmfs/systems-blueprint/commit/fc5ea5bded396a37952371948cba6afde6b79d97))
+* **deps-dev:** bump codecov from 3.6.1 to 3.6.2 ([1ea5028](https://github.com/wmfs/systems-blueprint/commit/1ea5028cd2f99fb74dd09527644cc9ff318aed1c))
+* **deps-dev:** bump codecov from 3.6.2 to 3.6.3 ([d1fd27a](https://github.com/wmfs/systems-blueprint/commit/d1fd27aafd3227c28cb500ab1283839642d63dff))
+* **deps-dev:** bump codecov from 3.6.3 to 3.6.4 ([d492bcf](https://github.com/wmfs/systems-blueprint/commit/d492bcf86af33996b727fe668d39352823657dda))
+* **deps-dev:** bump codecov from 3.6.4 to 3.6.5 ([2204c64](https://github.com/wmfs/systems-blueprint/commit/2204c647ea9d1d706cd74248c92b5f0790690a20))
+* **deps-dev:** bump codecov from 3.6.5 to 3.7.0 ([f95a94d](https://github.com/wmfs/systems-blueprint/commit/f95a94dd69e29e30c84fbd54d525589a51cad0e4))
+* **deps-dev:** bump conventional-changelog-metahub from 4.0.0 to 4.0.1 ([5dc79d1](https://github.com/wmfs/systems-blueprint/commit/5dc79d1cc9d5d9c671568e61a565f7be323bfa86))
+* **deps-dev:** bump cz-conventional-changelog from 3.0.2 to 3.0.3 ([ec90c44](https://github.com/wmfs/systems-blueprint/commit/ec90c442d561f2e5f6aabf6b5515d4530d71009e))
+* **deps-dev:** bump cz-conventional-changelog from 3.0.2 to 3.1.0 ([3cf734f](https://github.com/wmfs/systems-blueprint/commit/3cf734fee5537c8ddb4d32fdc951252da0defc38))
+* **deps-dev:** bump cz-conventional-changelog from 3.1.0 to 3.2.0 ([d3bf175](https://github.com/wmfs/systems-blueprint/commit/d3bf175835c691f104ab64bfb875cea855ac382d))
+* **deps-dev:** bump mocha from 7.0.0 to 7.0.1 ([fdbc4cb](https://github.com/wmfs/systems-blueprint/commit/fdbc4cb338317c27896ee7d22dce2e208decd6fc))
+* **deps-dev:** bump mocha from 7.0.1 to 7.1.0 ([ae971ae](https://github.com/wmfs/systems-blueprint/commit/ae971aea2424d5a35e74a4931955ceeceb690878))
+* **deps-dev:** bump mocha from 7.1.0 to 7.1.1 ([33be538](https://github.com/wmfs/systems-blueprint/commit/33be53893cb9258ac03d740fbc904f1f1eea86a7))
+* **deps-dev:** bump mocha from 7.1.1 to 7.1.2 ([8d68577](https://github.com/wmfs/systems-blueprint/commit/8d68577e0cd1588094b7f5c1abac6f362d5c0b08))
+* **deps-dev:** bump mocha from 7.1.2 to 7.2.0 ([f84395a](https://github.com/wmfs/systems-blueprint/commit/f84395a0f04368348414ed8b9f3cb4c8eb4694aa))
+* **deps-dev:** bump nyc from 15.0.0 to 15.0.1 ([ed4d776](https://github.com/wmfs/systems-blueprint/commit/ed4d77640e8ffb991873bbd6faf736c69239a562))
+* **deps-dev:** bump nyc from 15.0.1 to 15.1.0 ([17388c7](https://github.com/wmfs/systems-blueprint/commit/17388c7cfafbb6edea2f956fa76b3c3aaf21e05c))
+* **deps-dev:** bump semantic-release from 15.14.0 to 17.0.4 ([1cf28b7](https://github.com/wmfs/systems-blueprint/commit/1cf28b70f892bade6abb3cf63aafed4a3f30a74e))
+* **deps-dev:** bump semantic-release from 17.0.4 to 17.0.5 ([e4d3ce4](https://github.com/wmfs/systems-blueprint/commit/e4d3ce4efe0af4f063ade72a88eaa2acb8eeb445))
+* **deps-dev:** bump semantic-release from 17.0.5 to 17.0.6 ([8da3b5c](https://github.com/wmfs/systems-blueprint/commit/8da3b5ceb674985b21e77e9aa46bab28fe931cb2))
+* **deps-dev:** bump semantic-release from 17.0.6 to 17.0.7 ([6209487](https://github.com/wmfs/systems-blueprint/commit/6209487b452f1d0d284a8233a64cab7184df608d))
+* **deps-dev:** bump semantic-release from 17.0.7 to 17.0.8 ([cfe69d6](https://github.com/wmfs/systems-blueprint/commit/cfe69d66c6a25bd828d72ccd4d19804ec1754d9e))
+* **deps-dev:** bump standard from 14.3.1 to 14.3.2 ([f037527](https://github.com/wmfs/systems-blueprint/commit/f037527eb6d34dd3795a8bba92e0761771edbf34))
+* **deps-dev:** bump standard from 14.3.2 to 14.3.3 ([1770dfa](https://github.com/wmfs/systems-blueprint/commit/1770dfabc52f2c533eab5ec7428ad5a5b3bf9ad5))
+* **deps-dev:** bump standard from 14.3.3 to 14.3.4 ([7e7bffb](https://github.com/wmfs/systems-blueprint/commit/7e7bffb9b168932c54cbd254588d1067ceb65c55))
+
+
+### ⚙️ Continuous Integrations
+
+* **circle:** add context env var config to config.yml ([63c1a45](https://github.com/wmfs/systems-blueprint/commit/63c1a45b691e7c20e89404f67e56d862e6666d52))
+
 # [1.5.0](https://github.com/wmfs/systems-blueprint/compare/v1.4.0...v1.5.0) (2020-01-21)
 
 
