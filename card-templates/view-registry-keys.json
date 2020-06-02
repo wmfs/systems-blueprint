@@ -1,0 +1,46 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Jumbotron",
+      "title": "Registry Keys"
+    },
+    {
+      "id": "regKeysData",
+      "type": "AdaptiveCard",
+      "arrayPath": "data.regKeys",
+      "body": [
+        {
+          "type": "Collapsible",
+          "title": "{{regKeysDataItem.key}}",
+          "subtitle": [
+            "Created: {{formatDate(regKeysDataItem.created, 'DD/MM/YY HH:mm')}}",
+            "Modified: {{formatDate(regKeysDataItem.modified, 'DD/MM/YY HH:mm')}}"
+          ],
+          "card": {
+            "type": "AdaptiveCard",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "<pre>{{JSON.stringify(regKeysDataItem.value, null, 2)}}</pre>"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Close"
+    }
+  ],
+  "templateMeta": {
+    "name": "registry-keys",
+    "title": "Registry Keys",
+    "category": "system"
+  }
+}
