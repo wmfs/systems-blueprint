@@ -1,3 +1,30 @@
+# [1.7.0](https://github.com/wmfs/systems-blueprint/compare/v1.6.0...v1.7.0) (2020-07-29)
+
+
+### ✨ Features
+
+* view os address lookups [ch1338] ([327d461](https://github.com/wmfs/systems-blueprint/commit/327d4615113ead76d71017e3a4b5ce852474e8f8))
+
+
+### 🐛 Bug Fixes
+
+* remove logging ([9086c38](https://github.com/wmfs/systems-blueprint/commit/9086c384be4858e3efbda0023273d6116a6538e5))
+
+
+### 🛠 Builds
+
+* **deps-dev:** bump codecov from 3.7.0 to 3.7.1 ([966b47d](https://github.com/wmfs/systems-blueprint/commit/966b47d18f8e5ad46c5bdb42539206f30e5d1ca8))
+* **deps-dev:** bump codecov from 3.7.1 to 3.7.2 ([50962a5](https://github.com/wmfs/systems-blueprint/commit/50962a5fc752c0213336c2882fbb4ce2eb505256))
+* **deps-dev:** bump mocha from 7.2.0 to 8.0.1 ([005b04c](https://github.com/wmfs/systems-blueprint/commit/005b04c27ea1163d3a69e0281f6c72e96e5c9e95))
+* **deps-dev:** bump semantic-release from 17.0.8 to 17.1.0 ([9cea1f6](https://github.com/wmfs/systems-blueprint/commit/9cea1f66291ca258e0d81887e9958ee4e06c3083))
+* **deps-dev:** bump semantic-release from 17.1.0 to 17.1.1 ([1a82e13](https://github.com/wmfs/systems-blueprint/commit/1a82e13dd391e208eb7803c3332a3e1cf7f3e041))
+
+
+### ⚙️ Continuous Integrations
+
+* **circle:** separate lint job [ch1009] ([eb453d0](https://github.com/wmfs/systems-blueprint/commit/eb453d0c15a474eb159dd8ba056c85c2d7bca680))
+* **circle:** use updated circle node image [skip ci] ([612394c](https://github.com/wmfs/systems-blueprint/commit/612394c958516c0d120b86f2a203bbf46c68abee))
+
 # [1.6.0](https://github.com/wmfs/systems-blueprint/compare/v1.5.0...v1.6.0) (2020-06-02)
 
 
