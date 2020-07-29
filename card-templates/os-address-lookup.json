@@ -1,0 +1,76 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Jumbotron",
+      "title": "OS Address Lookup"
+    },
+    {
+      "type": "TextBlock",
+      "text": "{{ data }}"
+    },
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "ID",
+              "value": "{{ data.id }}"
+            },
+            {
+              "title": "Query",
+              "value": "{{ data.query }}"
+            },
+            {
+              "title": "Offset",
+              "value": "{{ data.qOffset }}"
+            },
+            {
+              "title": "Limit",
+              "value": "{{ data.qLimit }}"
+            },
+            {
+              "title": "Status",
+              "value": "{{ data.status }}"
+            },
+            {
+              "title": "Total Hits",
+              "value": "{{ data.totalHits }}"
+            },
+            {
+              "title": "Error Message",
+              "value": "{{ data.errorMessage }}"
+            },
+            {
+              "title": "Created",
+              "value": "{{ data.created }}"
+            },
+            {
+              "title": "Created By",
+              "value": "{{ data.createdBy }}"
+            },
+            {
+              "title": "Modified",
+              "value": "{{ data.modified }}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Close"
+    }
+  ],
+  "templateMeta": {
+    "name": "os-address-lookup",
+    "title": "OS Address Lookup",
+    "category": "system"
+  }
+}

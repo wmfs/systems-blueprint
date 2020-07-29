@@ -1,0 +1,27 @@
+{
+  "Comment": "Get OS Address Lookups",
+  "name": "Get OS Address Lookups",
+  "version": "1.0",
+  "categories": [
+    "system"
+  ],
+  "StartAt": "GetData",
+  "States": {
+    "GetData": {
+      "Type": "Task",
+      "Resource": "module:runFunction",
+      "ResourceConfig": {
+        "functionName": "getOsAddressLookups"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "$authenticated",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}

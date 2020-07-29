@@ -1,0 +1,38 @@
+{
+  "Comment": "View OS Address Lookup",
+  "name": "View OS Address Lookup",
+  "version": "1.0",
+  "categories": [
+    "system"
+  ],
+  "StartAt": "Finding",
+  "States": {
+    "Finding": {
+      "Type": "Task",
+      "InputPath": "$.id",
+      "Resource": "module:findingById",
+      "ResourceConfig": {
+        "modelId": "osPlaces_addressLookupReceipts"
+      },
+      "ResultPath": "$",
+      "Next": "AwaitingHumanInput"
+    },
+    "AwaitingHumanInput": {
+      "Type": "Task",
+      "Resource": "module:awaitingHumanInput",
+      "ResourceConfig": {
+        "uiName": "system_osAddressLookup",
+        "dataPath": "$"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "system_system",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
