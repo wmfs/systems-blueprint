@@ -8,10 +8,6 @@
       "title": "OS Address Lookup"
     },
     {
-      "type": "TextBlock",
-      "text": "{{ data }}"
-    },
-    {
       "type": "Container",
       "items": [
         {
