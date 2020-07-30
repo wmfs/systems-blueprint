@@ -75,10 +75,12 @@
             "clickToLaunch": true,
             "showLaunches": true,
             "templates": {
-              "label": "{{item.status}} - {{item.query}}",
+              "badge": "{{ item.status }}",
+              "badgeColor": "accent",
+              "label": "{{ item.query || 'NO_QUERY' }}",
               "sublabel": [
-                "{{item._created_by}}",
-                "{{formatDate(item._created, 'DD/MM/YY HH:mm')}}"
+                "{{ item._created_by }}",
+                "{{ formatDate(item._created, 'DD/MM/YY HH:mm') }}"
               ]
             }
           }
