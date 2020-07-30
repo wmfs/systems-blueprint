@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/wmfs/systems-blueprint/compare/v1.7.0...v1.8.0) (2020-07-30)
+
+
+### ✨ Features
+
+* improve appearance of displaying address lookup results [ch1338] ([bebdf3b](https://github.com/wmfs/systems-blueprint/commit/bebdf3b66b54ef10ccee3dafc58f4d29df1baf61))
+
 # [1.7.0](https://github.com/wmfs/systems-blueprint/compare/v1.6.0...v1.7.0) (2020-07-29)
 
 
