@@ -1,0 +1,31 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Jumbotron",
+      "title": "Environment Variables"
+    },
+    {
+      "id": "envVarsList",
+      "type": "List",
+      "arrayPath": "data.envVars",
+      "templates": {
+        "label": "{{ item.title }}",
+        "sublabel": "{{ item.value }}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Close"
+    }
+  ],
+  "templateMeta": {
+    "name": "environment-variables",
+    "title": "Environment Variables",
+    "category": "system"
+  }
+}

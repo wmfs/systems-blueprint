@@ -1,0 +1,41 @@
+{
+  "Comment": "View Environment Variables",
+  "name": "View Environment Variables",
+  "version": "1.0",
+  "categories": [
+    "system"
+  ],
+  "instigators": [
+    "user"
+  ],
+  "instigatorGroup": "app",
+  "StartAt": "Finding",
+  "States": {
+    "Finding": {
+      "Type": "Task",
+      "Resource": "module:runFunction",
+      "ResourceConfig": {
+        "functionName": "getEnvironmentVariables"
+      },
+      "Next": "AwaitingHumanInput"
+    },
+    "AwaitingHumanInput": {
+      "Type": "Task",
+      "Resource": "module:awaitingHumanInput",
+      "ResourceConfig": {
+        "uiType": "form",
+        "uiName": "system_viewEnvironmentVariables",
+        "dataPath": "$"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "system_system",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
