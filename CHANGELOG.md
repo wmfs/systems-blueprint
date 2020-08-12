@@ -1,3 +1,16 @@
+# [1.9.0](https://github.com/wmfs/systems-blueprint/compare/v1.8.0...v1.9.0) (2020-08-12)
+
+
+### ✨ Features
+
+* ability to view backend environment variables from frontend [ch1583] ([ca9150b](https://github.com/wmfs/systems-blueprint/commit/ca9150b65a06f880f31ff8c6852a52f473be56ee))
+
+
+### 🛠 Builds
+
+* **deps-dev:** bump mocha from 8.0.1 to 8.1.0 ([b83a1c8](https://github.com/wmfs/systems-blueprint/commit/b83a1c87ee150f963bc2924c83e9d5903378abbd))
+* **deps-dev:** bump mocha from 8.1.0 to 8.1.1 ([62237a1](https://github.com/wmfs/systems-blueprint/commit/62237a153b95f2894efe817e7f513cd682b99283))
+
 # [1.8.0](https://github.com/wmfs/systems-blueprint/compare/v1.7.0...v1.8.0) (2020-07-30)
 
 
