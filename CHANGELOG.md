@@ -1,3 +1,17 @@
+# [1.10.0](https://github.com/wmfs/systems-blueprint/compare/v1.9.0...v1.10.0) (2020-08-27)
+
+
+### ✨ Features
+
+* refactor env vars ([f4c6e4f](https://github.com/wmfs/systems-blueprint/commit/f4c6e4f1fb3c466e90ddc49f7c068889038adc0b))
+
+
+### 🛠 Builds
+
+* **deps-dev:** bump cz-conventional-changelog from 3.2.0 to 3.2.1 ([bc14677](https://github.com/wmfs/systems-blueprint/commit/bc14677b23aa48273719ed63be007d9053320ddf))
+* **deps-dev:** bump cz-conventional-changelog from 3.2.1 to 3.3.0 ([7c5936c](https://github.com/wmfs/systems-blueprint/commit/7c5936c64a740dc00d3e0cb651e506613c7335c8))
+* **deps-dev:** bump mocha from 8.1.1 to 8.1.2 ([b6e1d99](https://github.com/wmfs/systems-blueprint/commit/b6e1d9956ab3c8d755077bf31e8ce7a060dfbe30))
+
 # [1.9.0](https://github.com/wmfs/systems-blueprint/compare/v1.8.0...v1.9.0) (2020-08-12)
 
 
