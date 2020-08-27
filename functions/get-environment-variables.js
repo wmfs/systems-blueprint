@@ -23,14 +23,22 @@ const TYMLY_VARS = [
   'GOV_UK_NOTIFY_API_KEY_TEXT_MESSAGING',
   'DW_PG_CONNECTION_STRING',
   'OS_PLACES_API_KEY'
-].sort()
+]
 
 module.exports = function () {
   return async function getEnvironmentVariables (event) {
-    event.envVars = Object
-      .entries(process.env)
-      .filter(([title]) => TYMLY_VARS.includes(title))
-      .map(([title, value]) => { return { title, value } })
+    // event.envVars = Object
+    //   .entries(process.env)
+    //   .filter(([title]) => TYMLY_VARS.includes(title))
+    //   .map(([title, value]) => { return { title, value } })
+
+    event.envVars = []
+
+    for (const title of TYMLY_VARS.sort()) {
+      const value = process.env[title]
+      if (value) event.envVars.push({ title, value })
+    }
+
     return event
   }
 }
