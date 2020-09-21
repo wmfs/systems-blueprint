@@ -1,3 +1,16 @@
+# [1.11.0](https://github.com/wmfs/systems-blueprint/compare/v1.10.0...v1.11.0) (2020-09-21)
+
+
+### ✨ Features
+
+* launch executions from user dashboard ([aca6f5d](https://github.com/wmfs/systems-blueprint/commit/aca6f5d4d75c4ffcbe9fe1e7faf95cd6cf3912c6))
+
+
+### 🛠 Builds
+
+* **deps-dev:** bump mocha from 8.1.2 to 8.1.3 ([acb0e13](https://github.com/wmfs/systems-blueprint/commit/acb0e13fe9b4026b12e1b939602bb8d496633363))
+* **deps-dev:** bump semantic-release from 17.1.1 to 17.1.2 ([6c863d1](https://github.com/wmfs/systems-blueprint/commit/6c863d1668c254967005fa956f1d5e11b63dda03))
+
 # [1.10.0](https://github.com/wmfs/systems-blueprint/compare/v1.9.0...v1.10.0) (2020-08-27)
 
 
