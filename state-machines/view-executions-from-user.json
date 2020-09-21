@@ -1,0 +1,37 @@
+{
+  "Comment": "View Executions",
+  "name": "View Executions",
+  "version": "1.0",
+  "categories": [
+    "system"
+  ],
+  "StartAt": "Init",
+  "States": {
+    "Init": {
+      "Type": "Task",
+      "Resource": "module:runFunction",
+      "ResourceConfig": {
+        "functionName": "userExecutionsInitData"
+      },
+      "Next": "AwaitingHumanInput"
+    },
+    "AwaitingHumanInput": {
+      "Type": "Task",
+      "Resource": "module:awaitingHumanInput",
+      "ResourceConfig": {
+        "uiType": "form",
+        "uiName": "system_viewExecutions",
+        "dataPath": "$"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "system_system",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
