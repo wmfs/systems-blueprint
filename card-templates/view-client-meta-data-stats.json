@@ -1,0 +1,42 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "id": "clientMetaDataTable",
+      "type": "Table",
+      "arrayPath": "data.clientMetaData",
+      "columns": [
+        {
+          "title": "Count",
+          "field": "count"
+        },
+        {
+          "title": "Name",
+          "field": "name"
+        },
+        {
+          "title": "Version",
+          "field": "version"
+        },
+        {
+          "title": "Desktop?",
+          "field": "desktop",
+          "format": "val === 'true' ? 'Yes' : 'No'"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Close"
+    }
+  ],
+  "templateMeta": {
+    "name": "view-client-meta-data-stats",
+    "title": "Client Meta Data Stats",
+    "category": "system"
+  }
+}
