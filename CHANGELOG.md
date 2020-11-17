@@ -1,3 +1,36 @@
+# [1.12.0](https://github.com/wmfs/systems-blueprint/compare/v1.11.0...v1.12.0) (2020-11-17)
+
+
+### ✨ Features
+
+* view client meta data stats to see what browsers/version are most used ([a97c51a](https://github.com/wmfs/systems-blueprint/commit/a97c51a98e0bc857c42b044fe6f58aba7baf8081))
+
+
+### 🛠 Builds
+
+* **deps-dev:** bump codecov from 3.7.2 to 3.8.0 ([f7cb566](https://github.com/wmfs/systems-blueprint/commit/f7cb566b8c273cda27dcc6aed92f2fd0276b1875))
+* **deps-dev:** bump codecov from 3.8.0 to 3.8.1 ([136aec0](https://github.com/wmfs/systems-blueprint/commit/136aec027956a429f2a987b9d5dfdca6c181d48a))
+* **deps-dev:** bump mocha from 8.1.3 to 8.2.0 ([b6ae243](https://github.com/wmfs/systems-blueprint/commit/b6ae243d5a0fff72762e22e0eb4755e450a2a4ff))
+* **deps-dev:** bump mocha from 8.2.0 to 8.2.1 ([7f60efa](https://github.com/wmfs/systems-blueprint/commit/7f60efa9aacb37ceca49ab9b5d69f559593adce7))
+* **deps-dev:** bump semantic-release from 17.1.2 to 17.2.0 ([61c92bc](https://github.com/wmfs/systems-blueprint/commit/61c92bcfa3424af9bf7783c4c046e244bd21e435))
+* **deps-dev:** bump semantic-release from 17.2.0 to 17.2.1 ([c2ac2ec](https://github.com/wmfs/systems-blueprint/commit/c2ac2ece18719096970d5da2cb94c29fee10b08b))
+* **deps-dev:** bump semantic-release from 17.2.1 to 17.2.2 ([c5924ec](https://github.com/wmfs/systems-blueprint/commit/c5924ec2051546b175907b3eeaa8f8cfda645b28))
+* **deps-dev:** bump semantic-release from 17.2.2 to 17.2.3 ([7eea320](https://github.com/wmfs/systems-blueprint/commit/7eea32072c39c49d763f3eb3cd84744d444bc7f5))
+* **deps-dev:** bump standard from 14.3.4 to 15.0.0 ([840353f](https://github.com/wmfs/systems-blueprint/commit/840353ff305002b30eda92e6b2b4f00deb8b7377))
+* **deps-dev:** bump standard from 15.0.0 to 15.0.1 ([353807b](https://github.com/wmfs/systems-blueprint/commit/353807b0e63580e7fc783dcb7f392d9e5214d361))
+* **deps-dev:** bump standard from 15.0.1 to 16.0.0 ([35a3a01](https://github.com/wmfs/systems-blueprint/commit/35a3a0153a602acd26f727d9ca8d2ba4ca942d6d))
+* **deps-dev:** bump standard from 16.0.0 to 16.0.1 ([11ce01e](https://github.com/wmfs/systems-blueprint/commit/11ce01efa6502c9493fb76b573db60f78efaf1d8))
+* **deps-dev:** bump standard from 16.0.1 to 16.0.2 ([dd75c9c](https://github.com/wmfs/systems-blueprint/commit/dd75c9c42e6b247ed8d66d360409c204738ff556))
+
+
+### ⚙️ Continuous Integrations
+
+* **circle:** authenticate Docker image pull [ch2767] ([5ca5d2d](https://github.com/wmfs/systems-blueprint/commit/5ca5d2d0b556aa98b9381ba375746e9c0e442f9f))
+* **circle:** cache dependencies [ch2770] ([646b2f4](https://github.com/wmfs/systems-blueprint/commit/646b2f44d91204a8ef3199cafb0d006d2ada0adb))
+* **circle:** ensure postgres has tz set ([d675440](https://github.com/wmfs/systems-blueprint/commit/d67544018833bd00536d1bd4d50758fbe7125da7))
+* **circle:** update build environment variable context name [ch2771] ([1ea8a84](https://github.com/wmfs/systems-blueprint/commit/1ea8a843eb2f39a9fd5ec0a1f5bb7472971c574c))
+* **circle:** use tmpfs postgres image [ch2769] ([ca6a5c3](https://github.com/wmfs/systems-blueprint/commit/ca6a5c36c5fabec232a7583fd4b18d10a49cf711))
+
 # [1.11.0](https://github.com/wmfs/systems-blueprint/compare/v1.10.0...v1.11.0) (2020-09-21)
 
 
