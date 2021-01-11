@@ -13,9 +13,9 @@ module.exports = function () {
       params: {
         date: null,
         executionName: null,
-        status: 'RUNNING',
+        status: null,
         userId: event.userId,
-        view: 'USER'
+        view: 'FILTER'
       },
       results: [],
       summary: {
@@ -24,7 +24,7 @@ module.exports = function () {
     }
 
     const { results, totalHits } = await getExecutions(env, {
-      view: 'USER',
+      view: 'FILTER',
       userId: event.userId,
       offset: 0,
       limit: 10

@@ -2,8 +2,15 @@ module.exports = function () {
   return async function (env, event) {
     const client = env.bootedServices.storage.client
 
-    const offset = event.offset || 0
-    const limit = event.limit || 10
+    const {
+      offset = 0,
+      limit = 10,
+      view,
+      executionName,
+      date,
+      userId,
+      status
+    } = event
 
     const columns = [
       'state_machine_name',
@@ -16,22 +23,36 @@ module.exports = function () {
     ]
 
     const select = `select ${columns.join(', ')} from tymly.execution`
+    const selectCount = 'select count(*) from tymly.execution'
     const end = `order by _created desc limit ${limit} offset ${offset}`
-
-    const wheres = {
-      ALL: '',
-      USER: `where execution_options::jsonb->>'userId' = '${event.userId}'`,
-      DATE: `where _created::date = '${event.date}'`,
-      STATUS: `where status = '${event.status}'`,
-      EXECUTION: `where execution_name = '${event.executionName}'`
-    }
 
     let results = []
     let totalHits = 0
+    let query
+    let totalHitsQuery
 
-    if (hasParams(event)) {
-      const query = `${select} ${wheres[event.view]} ${end};`
+    if (view === 'ALL') {
+      query = `${select} ${end};`
+      totalHitsQuery = `${selectCount};`
+    } else if (view === 'EXECUTION') {
+      if (executionName) {
+        query = `${select} where execution_name = '${executionName}' ${end};`
+        totalHitsQuery = `${selectCount} where execution_name = '${executionName}';`
+      }
+    } else {
+      const whereParts = []
 
+      if (date) whereParts.push(`_created::date = '${date}'`)
+      if (userId) whereParts.push(`execution_options::jsonb->>'userId' = '${userId}'`)
+      if (status) whereParts.push(`status = '${status}'`)
+
+      const where = `${whereParts.length > 0 ? 'WHERE ' : '' }${whereParts.join(' AND ')}`
+
+      query = `${select} ${where} ${end};`
+      totalHitsQuery = `${selectCount} ${where};`
+    }
+
+    if (query && totalHitsQuery) {
       const queryResult = await client.query(query)
       results = queryResult.rows.map(r => {
         r.launches = [{
@@ -42,18 +63,10 @@ module.exports = function () {
         return r
       })
 
-      const totalHitsRes = await client.query(`select count(*) from tymly.execution ${wheres[event.view]};`)
+      const totalHitsRes = await client.query(totalHitsQuery)
       totalHits = totalHitsRes.rows[0].count
     }
 
     return { results, totalHits }
   }
-}
-
-function hasParams (event) {
-  if (event.view === 'ALL') return true
-  if (event.view === 'USER') return !!event.userId
-  if (event.view === 'DATE') return !!event.date
-  if (event.view === 'STATUS') return !!event.status
-  if (event.view === 'EXECUTION') return !!event.executionName
 }

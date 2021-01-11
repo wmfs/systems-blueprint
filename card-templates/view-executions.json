@@ -45,42 +45,36 @@
                 "value": "ALL"
               },
               {
-                "title": "User",
-                "value": "USER"
-              },
-              {
-                "title": "Date",
-                "value": "DATE"
-              },
-              {
-                "title": "Status",
-                "value": "STATUS"
-              },
-              {
-                "title": "Execution",
+                "title": "By execution name",
                 "value": "EXECUTION"
+              },
+              {
+                "title": "By filters",
+                "value": "FILTER"
               }
             ]
           },
           {
-            "showWhen": "data.executions.params.view === 'USER'",
+            "showWhen": "data.executions.params.view === 'FILTER'",
             "id": "userId",
             "type": "Input.Text",
             "title": "User ID",
             "spacing": "medium"
           },
           {
-            "showWhen": "data.executions.params.view === 'DATE'",
+            "showWhen": "data.executions.params.view === 'FILTER'",
             "id": "date",
             "type": "Input.Date",
+            "clearable": true,
             "title": "Date",
             "spacing": "medium",
             "max": "$TODAY"
           },
           {
-            "showWhen": "data.executions.params.view === 'STATUS'",
+            "showWhen": "data.executions.params.view === 'FILTER'",
             "id": "status",
             "type": "Input.ChoiceSet",
+            "clearable": true,
             "title": "Status",
             "value": "RUNNING",
             "choices": [
