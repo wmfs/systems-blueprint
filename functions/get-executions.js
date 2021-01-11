@@ -46,7 +46,7 @@ module.exports = function () {
       if (userId) whereParts.push(`execution_options::jsonb->>'userId' = '${userId}'`)
       if (status) whereParts.push(`status = '${status}'`)
 
-      const where = `${whereParts.length > 0 ? 'WHERE ' : '' }${whereParts.join(' AND ')}`
+      const where = `${whereParts.length > 0 ? 'WHERE ' : ''}${whereParts.join(' AND ')}`
 
       query = `${select} ${where} ${end};`
       totalHitsQuery = `${selectCount} ${where};`
