@@ -1,3 +1,23 @@
+# [1.13.0](https://github.com/wmfs/systems-blueprint/compare/v1.12.0...v1.13.0) (2021-01-11)
+
+
+### ✨ Features
+
+* search executions by all filters at same time ([b8552c8](https://github.com/wmfs/systems-blueprint/commit/b8552c8a53305e137a213c189bc6603ee86ad2c9))
+
+
+### 🛠 Builds
+
+* **deps-dev:** bump semantic-release from 17.2.3 to 17.2.4 ([a86ee65](https://github.com/wmfs/systems-blueprint/commit/a86ee65678254dcbcb2ef2b7dca17072631a1772))
+* **deps-dev:** bump semantic-release from 17.2.4 to 17.3.0 ([7ce840d](https://github.com/wmfs/systems-blueprint/commit/7ce840ded8e4a650ca56d12031df829c900cc999))
+* **deps-dev:** bump semantic-release from 17.3.0 to 17.3.1 ([b0d772b](https://github.com/wmfs/systems-blueprint/commit/b0d772b6dda8e2f74c7c231c0655b8a45d62a990))
+* **deps-dev:** bump standard from 16.0.2 to 16.0.3 ([365378b](https://github.com/wmfs/systems-blueprint/commit/365378bdde2a00f3f772ac17141bfff77007bb5c))
+
+
+### 💎 Styles
+
+* standard ([776e2ad](https://github.com/wmfs/systems-blueprint/commit/776e2ad44baff67ae43dc0901fcc8cdaafda0b0c))
+
 # [1.12.0](https://github.com/wmfs/systems-blueprint/compare/v1.11.0...v1.12.0) (2020-11-17)
 
 
