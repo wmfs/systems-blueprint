@@ -9,7 +9,8 @@ module.exports = function () {
       executionName,
       date,
       userId,
-      status
+      status,
+      stateMachineName
     } = event
 
     const columns = [
@@ -45,6 +46,7 @@ module.exports = function () {
       if (date) whereParts.push(`_created::date = '${date}'`)
       if (userId) whereParts.push(`execution_options::jsonb->>'userId' = '${userId}'`)
       if (status) whereParts.push(`status = '${status}'`)
+      if (stateMachineName) whereParts.push(`state_machine_name = '${stateMachineName}'`)
 
       const where = `${whereParts.length > 0 ? 'WHERE ' : ''}${whereParts.join(' AND ')}`
 

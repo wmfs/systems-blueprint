@@ -63,6 +63,13 @@
           },
           {
             "showWhen": "data.executions.params.view === 'FILTER'",
+            "id": "stateMachineName",
+            "type": "Input.Text",
+            "title": "State Machine Name",
+            "spacing": "medium"
+          },
+          {
+            "showWhen": "data.executions.params.view === 'FILTER'",
             "id": "date",
             "type": "Input.Date",
             "clearable": true,
