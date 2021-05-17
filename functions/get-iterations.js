@@ -2,13 +2,12 @@ const axios = require('axios')
 
 module.exports = function () {
   return async function getIterations (event) {
-
     const { data } = await axios.get(
       'https://api.clubhouse.io/api/v3/iterations',
       {
         headers: {
           'Clubhouse-Token': process.env.CLUBHOUSE_TOKEN,
-          'organization': 'wmfs'
+          organization: 'wmfs'
         }
       }
     )
