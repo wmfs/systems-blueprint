@@ -1,0 +1,14 @@
+{
+  "label": "Clubhouse Token",
+  "description": "Clubhouse Token",
+  "schema": {
+    "properties": {
+      "environmentVariableName": "CLUBHOUSE_TOKEN",
+      "value": {
+        "type": "string",
+        "default": "Please insert value here"
+      }
+    },
+    "required": ["value"]
+  }
+}
