@@ -1,0 +1,33 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "id": "storyList",
+          "type": "List",
+          "arrayPath": "data.stories",
+          "templates": {
+            "label": "{{ item.name }}",
+            "sublabel": "{{ item.app_url }}"
+          },
+          "notFoundText": "No stories found."
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Close"
+    }
+  ],
+  "templateMeta": {
+    "name": "release-note-view",
+    "title": "Release Notes",
+    "category": "system"
+  }
+}

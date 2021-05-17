@@ -1,0 +1,37 @@
+{
+  "Comment": "Generate Release Notes for Tymly Releases",
+  "name": "Release Notes",
+  "version": "1.0",
+  "categories": [
+    "system"
+  ],
+  "StartAt": "GetStories",
+  "States": {
+    "GetStories": {
+      "Type": "Task",
+      "Resource": "module:runFunction",
+      "ResourceConfig": {
+        "functionName": "getAndProcessReleaseNotes"
+      },
+      "Next": "AwaitingHumanInput"
+    },
+    "AwaitingHumanInput": {
+      "Type": "Task",
+      "Resource": "module:awaitingHumanInput",
+      "ResourceConfig": {
+        "uiType": "form",
+        "uiName": "system_releaseNoteView",
+        "dataPath": "$"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "system_businessAnalyst",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
