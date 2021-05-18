@@ -33,7 +33,8 @@
       "title": "Download",
       "stateMachineName": "system_downloadReleaseNotes_1_0",
       "input": {
-        "id": "$.iterationId"
+        "id": "$.iterationId",
+        "stories": "$.stories"
       }
     }
   ],

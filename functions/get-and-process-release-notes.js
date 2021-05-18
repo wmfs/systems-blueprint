@@ -4,7 +4,6 @@ const WORKFLOW_MAPPINGS = require('../shared/clubhouse-workflow-ids')
 module.exports = function () {
   return async function getAndProcessReleaseNotes (event) {
     const READY_FOR_RELEASE_IDS = WORKFLOW_MAPPINGS.filter(workflow => workflow.state === 'In UAT' || workflow.state === 'Ready for Prod').map(workflow => workflow.id)
-    console.log('>>> RELEASE IDS ', READY_FOR_RELEASE_IDS)
 
     const { data } = await axios.get(
       `https://api.clubhouse.io/api/v3/iterations/${event.iterationId}/stories`,
