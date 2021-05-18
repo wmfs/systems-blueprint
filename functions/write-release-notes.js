@@ -1,27 +1,30 @@
 const path = require('path')
-const Pdf = require('pdfkit')
+const PDFDocument = require('pdfkit')
 const fs = require('fs')
 
 module.exports = function () {
-  return async function writeReleaseNotes (event) {
-    const { stories } = event
-    const notes = []
+  return async function writeReleaseNotes (event, env) {
+    const { stories, exportDirectory } = event
 
-    stories.forEach(story => {
-      notes.push(`${story.name} (https://app.clubhouse.io/wmfs/story/${story.id})`)
-    })
+    const notes = stories.map(story => `${story.name} [ch${story.id}]`)
 
-    const doc = new Pdf()
-    const today = new Date().toString().split(' ').slice(1, 4).join('-')
-    const exportFilename = 'release-notes-test.pdf'
+    const now = env.bootedServices.timestamp.now()
+    const exportFilename = `release-notes-${now.format('YYYYMMDD-HHmm')}.pdf`
 
-    const stream = doc.pipe(fs.createWriteStream(exportFilename))
+    const filePath = path.join(exportDirectory, exportFilename)
 
-    doc.image(path.join(__dirname, '..', 'shared', 'Tymly-Logo.png'), {
-      fit: [250, 300],
-      align: 'top',
-      valign: 'left'
-    })
+    const doc = new PDFDocument()
+
+    doc.pipe(fs.createWriteStream(filePath))
+
+    doc.image(
+      path.join(__dirname, '..', 'shared', 'Tymly-Logo.png'),
+      {
+        fit: [250, 300],
+        align: 'top',
+        valign: 'left'
+      }
+    )
 
     doc
       .moveTo(75, 150)
@@ -35,19 +38,19 @@ module.exports = function () {
 
     doc
       .fontSize(10)
-      .text(`Versions released on ${today.toString().split(' ').slice(1, 4).join(' ')}`, 80, 160)
+      .text(`Released on ${now.format('DD/MM/YYYY')}`, 80, 160)
 
     doc
       .fontSize(12)
-      .text('Feature List:', 80, 215)
+      .text('Features', 80, 215)
 
     doc
       .list(notes, 90, 240)
 
     doc.end()
-    stream.on('finish', function () {
-      event.exportFilename = exportFilename
-      return event
-    })
+
+    event.exportFilename = exportFilename
+
+    return event
   }
 }

@@ -17,9 +17,9 @@
         "defaultValue": false
       },
       "ResultPath": "$.exportDirectory",
-      "Next": "GetData"
+      "Next": "WriteReleaseNotes"
     },
-    "GetData": {
+    "WriteReleaseNotes": {
       "Type": "Task",
       "Resource": "function:system_writeReleaseNotes",
       "Next": "DownloadFile"
