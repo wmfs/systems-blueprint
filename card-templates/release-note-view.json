@@ -8,7 +8,8 @@
       "items": [
         {
           "type": "Jumbotron",
-          "title": "Release notes for iteration"
+          "title": "Release notes for {{ data.name }}",
+          "subtitle": "Sprint ended on: {{ data.endDate }}"
         },
         {
           "type": "TextBlock",
@@ -75,6 +76,8 @@
         "features": "$.features",
         "bugs": "$.bugs",
         "chores": "$.chores",
+        "iterationName": "$.name",
+        "endDate": "$.endDate",
         "exportType": "PDF"
       }
     },
@@ -87,6 +90,8 @@
         "features": "$.features",
         "bugs": "$.bugs",
         "chores": "$.chores",
+        "iterationName": "$.name",
+        "endDate": "$.endDate",
         "exportType": "HTML"
       }
     }

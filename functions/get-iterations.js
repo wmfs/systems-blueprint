@@ -18,7 +18,9 @@ module.exports = function () {
           title: 'Release Notes',
           stateMachineName: 'system_releaseNotesGenerate_1_0',
           input: {
-            iterationId: iteration.id
+            iterationId: iteration.id,
+            name: iteration.name,
+            endDate: iteration.end_date
           }
         }
       ]
