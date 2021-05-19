@@ -4,7 +4,7 @@ const fs = require('fs')
 
 module.exports = function () {
   return async function writeReleaseNotes (event, env) {
-    const { bugs, features, chores, exportDirectory, exportType } = event
+    const { bugs, features, chores, endDate, exportDirectory, exportType } = event
     const now = env.bootedServices.timestamp.now()
     let exportFilename = `release-notes-${now.format('YYYYMMDD-HHmm')}`
 
@@ -35,7 +35,7 @@ module.exports = function () {
 
       doc
         .fontSize(10)
-        .text(`Released on ${now.format('DD/MM/YYYY')}`, 80, 160)
+        .text(`Release notes - Tymly release on ${endDate}`, 80, 160)
 
       for (const [key, section] of Object.entries({ features, bugs, chores })) {
         if (section.length > 0) {
@@ -43,7 +43,7 @@ module.exports = function () {
 
           doc
             .fontSize(12)
-            .text(key)
+            .text(`${key}:`)
 
           doc
             .list(section)
@@ -56,7 +56,7 @@ module.exports = function () {
       let html = `<html lang="en"><head><meta charset="UTF-8"><title>${exportFilename}</title></head><body><h3>Release Notes:</h3><br>`
       for (const [key, section] of Object.entries({ features, bugs, chores })) {
         if (section.length > 0) {
-          html += `<h3>${key}</h3><ul>`
+          html += `<h3>${`${key}:`}</h3><ul>`
           section.forEach(story => {
             html += `<li>${story}</li>`
           })
