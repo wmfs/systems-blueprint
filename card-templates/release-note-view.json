@@ -11,14 +11,52 @@
           "title": "Release notes for iteration"
         },
         {
-          "id": "storyList",
+          "type": "TextBlock",
+          "text": "Features",
+          "weight": "bolder",
+          "size": "medium",
+          "showWhen": "data.features.length > 0"
+        },
+        {
+          "id": "featuresList",
           "type": "List",
-          "arrayPath": "data.stories",
+          "arrayPath": "data.features",
           "templates": {
-            "label": "{{ item.name }}",
-            "sublabel": "{{ item.app_url }}"
+            "label": "{{ item }}"
           },
-          "notFoundText": "No stories found."
+          "showWhen": "data.features.length > 0"
+        },
+        {
+          "type": "TextBlock",
+          "text": "Bugs",
+          "weight": "bolder",
+          "size": "medium",
+          "showWhen": "data.features.length > 0"
+        },
+        {
+          "id": "bugsList",
+          "type": "List",
+          "arrayPath": "data.bugs",
+          "templates": {
+            "label": "{{ item }}"
+          },
+          "showWhen": "data.bugs.length > 0"
+        },
+        {
+          "type": "TextBlock",
+          "text": "Chores",
+          "weight": "bolder",
+          "size": "medium",
+          "showWhen": "data.chores.length > 0"
+        },
+        {
+          "id": "choresList",
+          "type": "List",
+          "arrayPath": "data.chores",
+          "templates": {
+            "label": "{{ item }}"
+          },
+          "showWhen": "data.chores.length > 0"
         }
       ]
     }
@@ -34,7 +72,9 @@
       "stateMachineName": "system_downloadReleaseNotes_1_0",
       "input": {
         "id": "$.iterationId",
-        "stories": "$.stories",
+        "features": "$.features",
+        "bugs": "$.bugs",
+        "chores": "$.chores",
         "exportType": "PDF"
       }
     },
@@ -44,7 +84,9 @@
       "stateMachineName": "system_downloadReleaseNotes_1_0",
       "input": {
         "id": "$.iterationId",
-        "stories": "$.stories",
+        "features": "$.features",
+        "bugs": "$.bugs",
+        "chores": "$.chores",
         "exportType": "HTML"
       }
     }
