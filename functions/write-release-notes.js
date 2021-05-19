@@ -1,4 +1,3 @@
-const { parse } = require('node-html-parser')
 const path = require('path')
 const PDFDocument = require('pdfkit')
 const fs = require('fs')
@@ -50,8 +49,12 @@ module.exports = function () {
       doc.end()
     } else if (exportType === 'HTML') {
       exportFilename += '.html'
-      const html = parse('<html lang="en"><head><meta charset="UTF-8"><title></title></head><body></body></html>')
-      fs.writeFileSync(path.join(exportDirectory, exportFilename), html.toString())
+      let html = `<html lang="en"><head><meta charset="UTF-8"><title>${exportFilename}</title></head><body><h3>Release Notes:</h3><br><ul>`
+      stories.forEach(story => {
+        html += `<li>${story.name} (${story.id})</li>`
+      })
+      html += '</ul></body></html>'
+      fs.writeFileSync(path.join(exportDirectory, exportFilename), html)
     }
 
     event.exportFilename = exportFilename
