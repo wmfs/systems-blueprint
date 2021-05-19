@@ -4,17 +4,15 @@ const fs = require('fs')
 
 module.exports = function () {
   return async function writeReleaseNotes (event, env) {
-    const { stories, exportDirectory, exportType } = event
+    const { bugs, features, chores, exportDirectory, exportType } = event
     const now = env.bootedServices.timestamp.now()
     let exportFilename = `release-notes-${now.format('YYYYMMDD-HHmm')}`
-    const notes = stories.map(story => `${story.name} [ch${story.id}]`)
-    const filePath = path.join(exportDirectory, exportFilename)
 
     if (exportType === 'PDF') {
       exportFilename += '.pdf'
       const doc = new PDFDocument()
 
-      doc.pipe(fs.createWriteStream(filePath))
+      doc.pipe(fs.createWriteStream(path.join(exportDirectory, exportFilename)))
 
       doc.image(
         path.join(__dirname, '..', 'shared', 'Tymly-Logo.png'),
@@ -39,21 +37,33 @@ module.exports = function () {
         .fontSize(10)
         .text(`Released on ${now.format('DD/MM/YYYY')}`, 80, 160)
 
-      doc
-        .fontSize(12)
-        .text('Features', 80, 215)
+      for (const [key, section] of Object.entries({ features, bugs, chores })) {
+        if (section.length > 0) {
+          doc.moveDown(2)
 
-      doc
-        .list(notes, 90, 240)
+          doc
+            .fontSize(12)
+            .text(key)
+
+          doc
+            .list(section)
+        }
+      }
 
       doc.end()
     } else if (exportType === 'HTML') {
       exportFilename += '.html'
-      let html = `<html lang="en"><head><meta charset="UTF-8"><title>${exportFilename}</title></head><body><h3>Release Notes:</h3><br><ul>`
-      stories.forEach(story => {
-        html += `<li>${story.name} (${story.id})</li>`
-      })
-      html += '</ul></body></html>'
+      let html = `<html lang="en"><head><meta charset="UTF-8"><title>${exportFilename}</title></head><body><h3>Release Notes:</h3><br>`
+      for (const [key, section] of Object.entries({ features, bugs, chores })) {
+        if (section.length > 0) {
+          html += `<h3>${key}</h3><ul>`
+          section.forEach(story => {
+            html += `<li>${story}</li>`
+          })
+          html += '</ul>'
+        }
+      }
+      html += '</body></html>'
       fs.writeFileSync(path.join(exportDirectory, exportFilename), html)
     }
 
