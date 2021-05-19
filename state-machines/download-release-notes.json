@@ -1,6 +1,6 @@
 {
-  "Comment": "Tool to download release notes",
-  "name": "Download Release Notes",
+  "Comment": "Tool to download release notes in a PDF file",
+  "name": "Download PDF Release Notes",
   "version": "1.0",
   "categories": [
     "system"

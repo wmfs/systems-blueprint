@@ -17,6 +17,7 @@
     "url": "https://github.com/wmfs/systems-blueprint/issues"
   },
   "dependencies": {
+    "node-html-parser": "^3.3.0",
     "pdfkit": "^0.12.1"
   },
   "devDependencies": {
