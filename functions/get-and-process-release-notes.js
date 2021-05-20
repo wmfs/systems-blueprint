@@ -3,7 +3,7 @@ const WORKFLOW_MAPPINGS = require('../shared/clubhouse-workflow-ids')
 
 module.exports = function () {
   return async function getAndProcessReleaseNotes (event) {
-    const READY_FOR_RELEASE_IDS = WORKFLOW_MAPPINGS.filter(workflow => workflow.state === 'In UAT' || workflow.state === 'Ready for Prod').map(workflow => workflow.id)
+    const READY_FOR_RELEASE_IDS = WORKFLOW_MAPPINGS.filter(workflow => workflow.state === 'Ready for Prod').map(workflow => workflow.id)
     event.features = []
     event.bugs = []
     event.chores = []
