@@ -41,13 +41,7 @@
   },
   "restrictions": [
     {
-      "roleId": "nfcc_brrAdmin",
-      "allows": [
-        "*"
-      ]
-    },
-    {
-      "roleId": "nfcc_frsDataDownload",
+      "roleId": "system_system",
       "allows": [
         "*"
       ]
