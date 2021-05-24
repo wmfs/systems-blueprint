@@ -2,17 +2,18 @@ const axios = require('axios')
 const WORKFLOW_MAPPINGS = require('../shared/clubhouse-workflow-ids')
 
 module.exports = function () {
-  return async function getAndProcessReleaseNotes (event) {
+  return async function getAndProcessReleaseNotes (env, event) {
     const READY_FOR_RELEASE_IDS = WORKFLOW_MAPPINGS.filter(workflow => workflow.state === 'Ready for Prod').map(workflow => workflow.id)
     event.features = []
     event.bugs = []
     event.chores = []
+    const registry = env.bootedServices.registry
 
     const { data } = await axios.get(
       `https://api.clubhouse.io/api/v3/iterations/${event.iterationId}/stories`,
       {
         headers: {
-          'Clubhouse-Token': process.env.CLUBHOUSE_TOKEN,
+          'Clubhouse-Token': registry.get('system_clubhouseToken'),
           organization: 'wmfs'
         },
         params: {
