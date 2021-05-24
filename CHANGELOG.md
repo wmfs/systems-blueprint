@@ -1,3 +1,20 @@
+# [1.16.0](https://github.com/wmfs/systems-blueprint/compare/v1.15.1...v1.16.0) (2021-05-24)
+
+
+### ✨ Features
+
+* display epic with release note ([6faa8c8](https://github.com/wmfs/systems-blueprint/commit/6faa8c808625134395c44589a70ebc60e42ffc2c))
+
+
+### 🐛 Bug Fixes
+
+* tidy up release notes ([f6c69fd](https://github.com/wmfs/systems-blueprint/commit/f6c69fd6c428ecf229f5893dbc4cc35d9add1397))
+
+
+### 💎 Styles
+
+* standard ([75bf93c](https://github.com/wmfs/systems-blueprint/commit/75bf93c2097ad5de2d84b499903c2f20dc25ad8d))
+
 ## [1.15.1](https://github.com/wmfs/systems-blueprint/compare/v1.15.0...v1.15.1) (2021-05-24)
 
 
