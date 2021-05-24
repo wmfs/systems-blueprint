@@ -1,18 +1,10 @@
-const axios = require('axios')
+const { getIterations: getClubhouseIterations } = require('../shared/clubhouse-api')
 
 module.exports = function () {
   return async function getIterations (env, event) {
     const registry = env.bootedServices.registry
 
-    const { data } = await axios.get(
-      'https://api.clubhouse.io/api/v3/iterations',
-      {
-        headers: {
-          'Clubhouse-Token': registry.get('system_clubhouseToken'),
-          organization: 'wmfs'
-        }
-      }
-    )
+    const data = await getClubhouseIterations(registry.get('system_clubhouseToken'))
 
     for (const iteration of data) {
       iteration.launches = [
