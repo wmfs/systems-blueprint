@@ -14,14 +14,19 @@ module.exports = function () {
         headers: {
           'Clubhouse-Token': process.env.CLUBHOUSE_TOKEN,
           organization: 'wmfs'
+        },
+        params: {
+          includes_description: true
         }
       }
     )
 
     data.forEach(story => {
-      if (READY_FOR_RELEASE_IDS.includes(story.workflow_state_id) && story.story_type === 'feature') event.features.push(`${story.name} [ch${story.id}]`)
-      else if (READY_FOR_RELEASE_IDS.includes(story.workflow_state_id) && story.story_type === 'bug') event.bugs.push(`${story.name} [ch${story.id}]`)
-      else if (READY_FOR_RELEASE_IDS.includes(story.workflow_state_id) && story.story_type === 'chore') event.chores.push(`${story.name} [ch${story.id}]`)
+      if (story.description && story.description.includes('<!-- Release Note -->')) story.releaseNote = `${story.description.split('<!-- Release Note -->')[1]} [ch${story.id}]`
+      else story.releaseNote = `${story.name} [ch${story.id}]`
+      if (READY_FOR_RELEASE_IDS.includes(story.workflow_state_id) && story.story_type === 'feature') event.features.push(story.releaseNote)
+      else if (READY_FOR_RELEASE_IDS.includes(story.workflow_state_id) && story.story_type === 'bug') event.bugs.push(story.releaseNote)
+      else if (READY_FOR_RELEASE_IDS.includes(story.workflow_state_id) && story.story_type === 'chore') event.chores.push(story.releaseNote)
     })
 
     return event
