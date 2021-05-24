@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/wmfs/systems-blueprint/compare/v1.15.0...v1.15.1) (2021-05-24)
+
+
+### 🐛 Bug Fixes
+
+* update get-iterations restrictions ([0dd86f7](https://github.com/wmfs/systems-blueprint/commit/0dd86f7b866ed7991e8964367e36f21fc94df92d))
+
 # [1.15.0](https://github.com/wmfs/systems-blueprint/compare/v1.14.0...v1.15.0) (2021-05-24)
 
 
