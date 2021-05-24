@@ -1,3 +1,51 @@
+# [1.15.0](https://github.com/wmfs/systems-blueprint/compare/v1.14.0...v1.15.0) (2021-05-24)
+
+
+### ✨ Features
+
+* craft the releaseNote by comment if it exists, else name ([ba7a014](https://github.com/wmfs/systems-blueprint/commit/ba7a014c13c64810c9dd8d50f1670dcd3d5d0f9f))
+* export stories as html ([0aa1772](https://github.com/wmfs/systems-blueprint/commit/0aa1772b923929d02518f28e2633a2da30fcdac9))
+* filter stories by in uat and ready for prod and fix download ([e11d675](https://github.com/wmfs/systems-blueprint/commit/e11d675009bce0e23350fca9d45e416f1088571d))
+* initial commit for HTML download ([1c7e9a8](https://github.com/wmfs/systems-blueprint/commit/1c7e9a863ed318dfaa9344aede1fa4bc264178ef))
+* initial commit for release notes download process ([993bb67](https://github.com/wmfs/systems-blueprint/commit/993bb67f60abb15469c538ff305840104555f522))
+* initial downlading capabilities ([3bfa5c6](https://github.com/wmfs/systems-blueprint/commit/3bfa5c6492e3bcd6edfefe60671a1b7c69afcd5c))
+* initial pdf exports ([7ec6b58](https://github.com/wmfs/systems-blueprint/commit/7ec6b585dce6c9586a129bfe03aa532c05c89e5f))
+* now use iteration name and end date ([565caf9](https://github.com/wmfs/systems-blueprint/commit/565caf9cd1c8459deae55560786a0463871514ef))
+* pdf download release notes ([fd0e39d](https://github.com/wmfs/systems-blueprint/commit/fd0e39d7f993d2334f8723fd4672a2a01728fe64))
+* split stories into features bugs chores ([9355dea](https://github.com/wmfs/systems-blueprint/commit/9355deaa3be2608783f91eab780b6e406f3fe5c3))
+* update restrictions on new state machines ([fdbd2cf](https://github.com/wmfs/systems-blueprint/commit/fdbd2cf0d790fa093f150bfad3866526daba980e))
+
+
+### 🐛 Bug Fixes
+
+* get token from registry key instead of env var ([6cc31b5](https://github.com/wmfs/systems-blueprint/commit/6cc31b5276953c79d687d3688c4224de43e8054b))
+* only generate from stories ready for prod ([27743ed](https://github.com/wmfs/systems-blueprint/commit/27743edd2e7b4b9c0925bdf82baab05ab7811a64))
+
+
+### 🛠 Builds
+
+* **deps-dev:** bump chai from 4.2.0 to 4.3.0 ([dc2e730](https://github.com/wmfs/systems-blueprint/commit/dc2e730b989de5aa88362b31c5f6d8c8a9738397))
+* **deps-dev:** bump chai from 4.3.0 to 4.3.1 ([05afb7b](https://github.com/wmfs/systems-blueprint/commit/05afb7b2f1d850eaae97d052afac6a0636372e67))
+* **deps-dev:** bump chai from 4.3.1 to 4.3.2 ([65d6b00](https://github.com/wmfs/systems-blueprint/commit/65d6b00492a765c880e429d5253248e2750cb900))
+* **deps-dev:** bump chai from 4.3.2 to 4.3.3 ([36bacae](https://github.com/wmfs/systems-blueprint/commit/36bacae709259b2eb40a216e73718c884e7b7b65))
+* **deps-dev:** bump chai from 4.3.3 to 4.3.4 ([8d7dd53](https://github.com/wmfs/systems-blueprint/commit/8d7dd53efc9626467098fa7e2125ca57f0dd9ff5))
+* **deps-dev:** bump codecov from 3.8.1 to 3.8.2 ([e39e569](https://github.com/wmfs/systems-blueprint/commit/e39e5695a1c6ba8df6da840ab057bec584429b22))
+* **deps-dev:** bump mocha from 8.2.1 to 8.3.0 ([b4a05f2](https://github.com/wmfs/systems-blueprint/commit/b4a05f27838ce98b003c0a9677e19abedc176fc2))
+* **deps-dev:** bump mocha from 8.3.0 to 8.3.1 ([d578ec5](https://github.com/wmfs/systems-blueprint/commit/d578ec5a4f0e97ff662546769a67efb705de48f6))
+* **deps-dev:** bump mocha from 8.3.1 to 8.3.2 ([ab20f60](https://github.com/wmfs/systems-blueprint/commit/ab20f6098b765d1d4daaefebddd0a7c5eda22f1f))
+* **deps-dev:** bump mocha from 8.3.2 to 8.4.0 ([2b15678](https://github.com/wmfs/systems-blueprint/commit/2b156785e2d650e6dbf7d5ced486ca9f3d3e5a1d))
+* **deps-dev:** bump semantic-release from 17.3.7 to 17.3.8 ([4eb0554](https://github.com/wmfs/systems-blueprint/commit/4eb0554d09a7b2de065307763e4fe1874e873075))
+* **deps-dev:** bump semantic-release from 17.3.8 to 17.3.9 ([942f415](https://github.com/wmfs/systems-blueprint/commit/942f415d7ff79d3a81eeab2124f0f7e47064f08c))
+* **deps-dev:** bump semantic-release from 17.3.9 to 17.4.0 ([bb7392d](https://github.com/wmfs/systems-blueprint/commit/bb7392d9ae9f45fd8eed012ae44a315debbf5dd5))
+* **deps-dev:** bump semantic-release from 17.4.0 to 17.4.1 ([39d7b9a](https://github.com/wmfs/systems-blueprint/commit/39d7b9a7f474a991bbd7f4cf35caafa0484584af))
+* **deps-dev:** bump semantic-release from 17.4.1 to 17.4.2 ([7b94aa9](https://github.com/wmfs/systems-blueprint/commit/7b94aa91e9ba7c75f5a5671d0af0b9982aa1bd06))
+* **deps-dev:** bump semantic-release from 17.4.2 to 17.4.3 ([b4bfd46](https://github.com/wmfs/systems-blueprint/commit/b4bfd46171fddeaf317fa6fba62ef63142ada9dc))
+
+
+### ⚙️ Continuous Integrations
+
+* **circle:** update postgres config to 13.2 ([f07ff1f](https://github.com/wmfs/systems-blueprint/commit/f07ff1f81ad930197fc41a4e7384c40a89f46f81))
+
 # [1.14.0](https://github.com/wmfs/systems-blueprint/compare/v1.13.0...v1.14.0) (2021-01-28)
 
 
