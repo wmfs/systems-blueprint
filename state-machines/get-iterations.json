@@ -32,7 +32,7 @@
   },
   "restrictions": [
     {
-      "roleId": "system_businessAnalyst",
+      "roleId": "system_system",
       "allows": [
         "*"
       ]
