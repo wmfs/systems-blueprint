@@ -23,7 +23,7 @@
       "type": "Container",
       "color": "warning",
       "spacing": "small",
-      "showWhen": "!data.features.length && !data.bugs.length && !data.chores.length",
+      "showWhen": "!data.stories.length",
       "items": [
         {
           "type": "TextBlock",
@@ -33,7 +33,31 @@
     },
     {
       "type": "Container",
-      "showWhen": "data.features.length > 0",
+      "showWhen": "data.stories.length",
+      "bordered": true,
+      "shadowed": true,
+      "spacing": "none",
+      "items": [
+        {
+          "id": "storiesTable",
+          "type": "MarkupTable",
+          "arrayPath": "data.stories",
+          "columns": [
+            {
+              "title": "Type",
+              "value": "{{ item.storyType }}"
+            },
+            {
+              "title": "Note",
+              "value": "{{ item.releaseNote }}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "showWhen": "data.stories.filter(r => r.storyType === 'feature').length > 0",
       "bordered": true,
       "shadowed": true,
       "spacing": "none",
@@ -47,7 +71,7 @@
         {
           "id": "featuresList",
           "type": "List",
-          "arrayPath": "data.features",
+          "arrayPath": "data.stories.filter(r => r.storyType === 'feature')",
           "templates": {
             "label": "{{ item.releaseNote }}"
           }
@@ -56,7 +80,7 @@
     },
     {
       "type": "Container",
-      "showWhen": "data.bugs.length > 0",
+      "showWhen": "data.stories.filter(r => r.storyType === 'bug').length > 0",
       "bordered": true,
       "shadowed": true,
       "spacing": "none",
@@ -70,7 +94,7 @@
         {
           "id": "bugsList",
           "type": "List",
-          "arrayPath": "data.bugs",
+          "arrayPath": "data.stories.filter(r => r.storyType === 'bug')",
           "templates": {
             "label": "{{ item.releaseNote }}"
           }
@@ -79,7 +103,7 @@
     },
     {
       "type": "Container",
-      "showWhen": "data.chores.length > 0",
+      "showWhen": "data.stories.filter(r => r.storyType === 'chore').length > 0",
       "bordered": true,
       "shadowed": true,
       "spacing": "none",
@@ -93,7 +117,7 @@
         {
           "id": "choresList",
           "type": "List",
-          "arrayPath": "data.chores",
+          "arrayPath": "data.stories.filter(r => r.storyType === 'chore')",
           "templates": {
             "label": "{{ item.releaseNote }}"
           }
@@ -107,7 +131,7 @@
       "title": "Close"
     },
     {
-      "showWhen": "data.features.length || data.bugs.length || data.chores.length",
+      "showWhen": "data.stories.length",
       "type": "Action.PushCard",
       "title": "Download PDF",
       "stateMachineName": "system_downloadReleaseNotes_1_0",
@@ -122,7 +146,7 @@
       }
     },
     {
-      "showWhen": "data.features.length || data.bugs.length || data.chores.length",
+      "showWhen": "data.stories.length",
       "type": "Action.PushCard",
       "title": "Download HTML",
       "stateMachineName": "system_downloadReleaseNotes_1_0",

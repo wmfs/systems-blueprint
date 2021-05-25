@@ -5,7 +5,11 @@ const Headers = { features: 'Features', bugs: 'Bugs', chores: 'Chores' }
 
 module.exports = function () {
   return async function writeReleaseNotes (event, env) {
-    const { exportType } = event
+    const { exportType, stories } = event
+
+    event.features = stories.filter(r => r.storyType === 'feature')
+    event.bugs = stories.filter(r => r.storyType === 'bug')
+    event.chores = stories.filter(r => r.storyType === 'chore')
 
     const now = env.bootedServices.timestamp.now()
 

@@ -13,40 +13,33 @@ module.exports = function () {
     const epics = await getEpics(token)
     const stories = await getStoriesByIteration(token, event.iterationId)
 
-    event.features = []
-    event.bugs = []
-    event.chores = []
+    event.stories = stories
+      .filter(story => READY_FOR_RELEASE_IDS.includes(story.workflow_state_id))
+      .map(story => {
+        const {
+          id,
+          name,
+          description,
+          story_type: storyType,
+          epic_id: epicId,
+          labels
+        } = story
 
-    stories.forEach(story => {
-      const {
-        id,
-        name,
-        description,
-        workflow_state_id: workflowStateId,
-        story_type: storyType,
-        epic_id: epicId,
-        labels
-      } = story
+        const labelNames = labels.map(r => r.name)
+        const epic = epics.find(e => e.id === epicId)
 
-      const labelNames = labels.map(r => r.name)
-      const epic = epics.find(e => e.id === epicId)
+        let releaseNote = ''
 
-      let releaseNote = ''
+        if (epic && epic.name) releaseNote += `${epic.name}: `
 
-      if (epic && epic.name) releaseNote += `${epic.name}: `
+        releaseNote += description && description.includes('<!-- Release Note -->')
+          ? `${description.split('<!-- Release Note -->')[1]} `
+          : `${name} `
 
-      releaseNote += description && description.includes('<!-- Release Note -->')
-        ? `${description.split('<!-- Release Note -->')[1]} `
-        : `${name} `
+        releaseNote += `[ch${id}]`
 
-      releaseNote += `[ch${id}]`
-
-      if (READY_FOR_RELEASE_IDS.includes(workflowStateId)) {
-        if (storyType === 'feature') event.features.push({ releaseNote, labelNames })
-        else if (storyType === 'bug') event.bugs.push({ releaseNote, labelNames })
-        else if (storyType === 'chore') event.chores.push({ releaseNote, labelNames })
-      }
-    })
+        return { releaseNote, labelNames, storyType }
+      })
 
     return event
   }
