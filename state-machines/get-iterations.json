@@ -13,10 +13,7 @@
   "States": {
     "GetIterations": {
       "Type": "Task",
-      "Resource": "module:runFunction",
-      "ResourceConfig": {
-        "functionName": "getIterations"
-      },
+      "Resource": "function:system_getIterations",
       "Next": "AwaitingHumanInput"
     },
     "AwaitingHumanInput": {

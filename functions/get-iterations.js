@@ -4,9 +4,9 @@ module.exports = function () {
   return async function getIterations (env, event) {
     const registry = env.bootedServices.registry
 
-    const data = await getClubhouseIterations(registry.get('system_clubhouseToken'))
+    const iterations = await getClubhouseIterations(registry.get('system_clubhouseToken'))
 
-    for (const iteration of data) {
+    for (const iteration of iterations) {
       iteration.launches = [
         {
           title: 'Release Notes',
@@ -20,8 +20,7 @@ module.exports = function () {
       ]
     }
 
-    // TODO: sort data by date
-    event.iterations = data
+    event.iterations = iterations.sort((a, b) => new Date(b.end_date) - new Date(a.end_date))
 
     return event
   }

@@ -9,10 +9,7 @@
   "States": {
     "GetStories": {
       "Type": "Task",
-      "Resource": "module:runFunction",
-      "ResourceConfig": {
-        "functionName": "getAndProcessReleaseNotes"
-      },
+      "Resource": "function:system_getAndProcessReleaseNotes",
       "Next": "AwaitingHumanInput"
     },
     "AwaitingHumanInput": {
