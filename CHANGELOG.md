@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/wmfs/systems-blueprint/compare/v1.17.2...v1.18.0) (2021-05-25)
+
+
+### ✨ Features
+
+* sort iterations by end date ([7e62822](https://github.com/wmfs/systems-blueprint/commit/7e62822c6c91d11878fa9aca8217d3caff387397))
+
 ## [1.17.2](https://github.com/wmfs/systems-blueprint/compare/v1.17.1...v1.17.2) (2021-05-25)
 
 
