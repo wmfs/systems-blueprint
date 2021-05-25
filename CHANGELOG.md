@@ -1,3 +1,15 @@
+## [1.17.2](https://github.com/wmfs/systems-blueprint/compare/v1.17.1...v1.17.2) (2021-05-25)
+
+
+### 🐛 Bug Fixes
+
+* asynchronous write release notes, and end write stream ([11592b8](https://github.com/wmfs/systems-blueprint/commit/11592b84034ca68a0be703fe374b88ecd3ce8e74))
+
+
+### 📦 Code Refactoring
+
+* split out generate pdf/html to functions ([27ba57e](https://github.com/wmfs/systems-blueprint/commit/27ba57e83729b1d61c0771651a906953b3eac76b))
+
 ## [1.17.1](https://github.com/wmfs/systems-blueprint/compare/v1.17.0...v1.17.1) (2021-05-25)
 
 
