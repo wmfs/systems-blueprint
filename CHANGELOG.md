@@ -1,3 +1,10 @@
+## [1.17.1](https://github.com/wmfs/systems-blueprint/compare/v1.17.0...v1.17.1) (2021-05-25)
+
+
+### 🐛 Bug Fixes
+
+* disable compression when creating PDF ([1bf667f](https://github.com/wmfs/systems-blueprint/commit/1bf667f0a9fbc3d380331a82da27412ec153611d))
+
 # [1.17.0](https://github.com/wmfs/systems-blueprint/compare/v1.16.1...v1.17.0) (2021-05-25)
 
 
