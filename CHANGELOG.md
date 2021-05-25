@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/wmfs/systems-blueprint/compare/v1.16.1...v1.17.0) (2021-05-25)
+
+
+### ✨ Features
+
+* header lookup when writing release notes ([29647a3](https://github.com/wmfs/systems-blueprint/commit/29647a363806cd1d36aebe1aec204522ddd94735))
+
 ## [1.16.1](https://github.com/wmfs/systems-blueprint/compare/v1.16.0...v1.16.1) (2021-05-25)
 
 
