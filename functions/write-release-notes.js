@@ -11,7 +11,7 @@ module.exports = function () {
 
     if (exportType === 'PDF') {
       exportFilename += '.pdf'
-      const doc = new PDFDocument()
+      const doc = new PDFDocument({ compress: false })
 
       doc.pipe(fs.createWriteStream(path.join(exportDirectory, exportFilename)))
 
