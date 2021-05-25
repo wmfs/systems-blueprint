@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/wmfs/systems-blueprint/compare/v1.18.0...v1.19.0) (2021-05-25)
+
+
+### ✨ Features
+
+* adjust release notes view ([3834d59](https://github.com/wmfs/systems-blueprint/commit/3834d593fdbf9e5369802cabb08b0a8301748dad))
+
 # [1.18.0](https://github.com/wmfs/systems-blueprint/compare/v1.17.2...v1.18.0) (2021-05-25)
 
 
