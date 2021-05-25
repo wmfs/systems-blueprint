@@ -5,59 +5,98 @@
   "body": [
     {
       "type": "Container",
+      "color": "accent",
+      "spacing": "small",
       "items": [
         {
-          "type": "Jumbotron",
-          "title": "Release notes for {{ data.name }}",
-          "subtitle": "Sprint ended on: {{ data.endDate }}"
+          "type": "TextBlock",
+          "text": "Release notes for {{ data.name }}",
+          "weight": "bolder"
         },
+        {
+          "type": "TextBlock",
+          "text": "Sprint ended on: {{ data.endDate }}"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "color": "warning",
+      "spacing": "small",
+      "showWhen": "!data.features.length && !data.bugs.length && !data.chores.length",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "There are no release notes for this iteration"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "showWhen": "data.features.length > 0",
+      "bordered": true,
+      "shadowed": true,
+      "spacing": "none",
+      "items": [
         {
           "type": "TextBlock",
           "text": "Features",
           "weight": "bolder",
-          "size": "medium",
-          "showWhen": "data.features.length > 0"
+          "size": "medium"
         },
         {
           "id": "featuresList",
           "type": "List",
           "arrayPath": "data.features",
           "templates": {
-            "label": "{{ item }}"
-          },
-          "showWhen": "data.features.length > 0"
-        },
+            "label": "{{ item.releaseNote }}"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "showWhen": "data.bugs.length > 0",
+      "bordered": true,
+      "shadowed": true,
+      "spacing": "none",
+      "items": [
         {
           "type": "TextBlock",
           "text": "Bugs",
           "weight": "bolder",
-          "size": "medium",
-          "showWhen": "data.features.length > 0"
+          "size": "medium"
         },
         {
           "id": "bugsList",
           "type": "List",
           "arrayPath": "data.bugs",
           "templates": {
-            "label": "{{ item }}"
-          },
-          "showWhen": "data.bugs.length > 0"
-        },
+            "label": "{{ item.releaseNote }}"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "showWhen": "data.chores.length > 0",
+      "bordered": true,
+      "shadowed": true,
+      "spacing": "none",
+      "items": [
         {
           "type": "TextBlock",
           "text": "Chores",
           "weight": "bolder",
-          "size": "medium",
-          "showWhen": "data.chores.length > 0"
+          "size": "medium"
         },
         {
           "id": "choresList",
           "type": "List",
           "arrayPath": "data.chores",
           "templates": {
-            "label": "{{ item }}"
-          },
-          "showWhen": "data.chores.length > 0"
+            "label": "{{ item.releaseNote }}"
+          }
         }
       ]
     }
@@ -68,6 +107,7 @@
       "title": "Close"
     },
     {
+      "showWhen": "data.features.length || data.bugs.length || data.chores.length",
       "type": "Action.PushCard",
       "title": "Download PDF",
       "stateMachineName": "system_downloadReleaseNotes_1_0",
@@ -82,6 +122,7 @@
       }
     },
     {
+      "showWhen": "data.features.length || data.bugs.length || data.chores.length",
       "type": "Action.PushCard",
       "title": "Download HTML",
       "stateMachineName": "system_downloadReleaseNotes_1_0",

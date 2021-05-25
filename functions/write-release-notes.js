@@ -63,7 +63,7 @@ function generatePdf (event, now) {
           .text(`${Headers[key]}:`)
 
         doc
-          .list(section)
+          .list(section.map(s => s.releaseNote))
       }
     }
 
@@ -87,7 +87,7 @@ function generateHtml (event, now) {
       if (section.length > 0) {
         html += `<h3>${Headers[key]}:</h3><ul>`
         section.forEach(story => {
-          html += `<li>${story}</li>`
+          html += `<li>${story.releaseNote}</li>`
         })
         html += '</ul>'
       }

@@ -24,10 +24,11 @@ module.exports = function () {
         description,
         workflow_state_id: workflowStateId,
         story_type: storyType,
-        epic_id: epicId
-        // labels.map(r => r.name)
+        epic_id: epicId,
+        labels
       } = story
 
+      const labelNames = labels.map(r => r.name)
       const epic = epics.find(e => e.id === epicId)
 
       let releaseNote = ''
@@ -41,9 +42,9 @@ module.exports = function () {
       releaseNote += `[ch${id}]`
 
       if (READY_FOR_RELEASE_IDS.includes(workflowStateId)) {
-        if (storyType === 'feature') event.features.push(releaseNote)
-        else if (storyType === 'bug') event.bugs.push(releaseNote)
-        else if (storyType === 'chore') event.chores.push(releaseNote)
+        if (storyType === 'feature') event.features.push({ releaseNote, labelNames })
+        else if (storyType === 'bug') event.bugs.push({ releaseNote, labelNames })
+        else if (storyType === 'chore') event.chores.push({ releaseNote, labelNames })
       }
     })
 
