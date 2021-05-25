@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/wmfs/systems-blueprint/compare/v1.16.0...v1.16.1) (2021-05-25)
+
+
+### 🐛 Bug Fixes
+
+* revert write release notes to see if we can resolve the PDF issue ([42626ff](https://github.com/wmfs/systems-blueprint/commit/42626ffa88a407230de6f0064e5f903e456694bf))
+
 # [1.16.0](https://github.com/wmfs/systems-blueprint/compare/v1.15.1...v1.16.0) (2021-05-24)
 
 
