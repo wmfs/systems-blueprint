@@ -1,7 +1,6 @@
 const path = require('path')
 const PDFDocument = require('pdfkit')
 const fs = require('fs')
-const capitalizeFirstLetter = string => string.charAt(0).toUpperCase() + string.slice(1)
 
 module.exports = function () {
   return async function writeReleaseNotes (event, env) {
@@ -44,7 +43,7 @@ module.exports = function () {
 
           doc
             .fontSize(12)
-            .text(`${capitalizeFirstLetter(key)}:`)
+            .text(`${key}:`)
 
           doc
             .list(section)
@@ -57,7 +56,7 @@ module.exports = function () {
       let html = `<html lang="en"><head><meta charset="UTF-8"><title>${exportFilename}</title></head><body><h3>Release Notes:</h3><br>`
       for (const [key, section] of Object.entries({ features, bugs, chores })) {
         if (section.length > 0) {
-          html += `<h3>${`${capitalizeFirstLetter(key)}:`}</h3><ul>`
+          html += `<h3>${`${key}:`}</h3><ul>`
           section.forEach(story => {
             html += `<li>${story}</li>`
           })
