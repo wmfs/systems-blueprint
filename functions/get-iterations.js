@@ -1,16 +1,23 @@
-const { getIterations: getClubhouseIterations } = require('../shared/clubhouse-api')
-
 module.exports = function () {
   return async function getIterations (env, event) {
-    const registry = env.bootedServices.registry
+    const clubhouseApi = env.bootedServices.clubhouseApi
 
-    const iterations = await getClubhouseIterations(registry.get('system_clubhouseToken'))
+    const iterations = await clubhouseApi.getIterations()
 
     for (const iteration of iterations) {
       iteration.launches = [
         {
-          title: 'Release Notes',
+          title: 'View release notes',
           stateMachineName: 'system_releaseNotesGenerate_1_0',
+          input: {
+            iterationId: iteration.id,
+            name: iteration.name,
+            endDate: iteration.end_date
+          }
+        },
+        {
+          title: 'View progressed stories',
+          stateMachineName: 'system_viewProgressedStories_1_0',
           input: {
             iterationId: iteration.id,
             name: iteration.name,

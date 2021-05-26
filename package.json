@@ -17,7 +17,7 @@
     "url": "https://github.com/wmfs/systems-blueprint/issues"
   },
   "dependencies": {
-    "pdfkit": "^0.12.1"
+    "pdfkit": "0.12.1"
   },
   "devDependencies": {
     "@semantic-release/changelog": "5.0.1",
