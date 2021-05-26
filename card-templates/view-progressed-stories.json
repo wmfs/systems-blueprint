@@ -10,7 +10,7 @@
       "items": [
         {
           "type": "TextBlock",
-          "text": "Stories progressed during this iteration",
+          "text": "Stories progressed during {{ data.name }}",
           "weight": "bolder"
         }
       ]
