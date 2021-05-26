@@ -1,17 +1,15 @@
-const { getStoriesByIteration, getEpics } = require('../shared/clubhouse-api')
 const WORKFLOW_MAPPINGS = require('../shared/clubhouse-workflow-ids')
 
 module.exports = function () {
   return async function getAndProcessReleaseNotes (env, event) {
-    const registry = env.bootedServices.registry
-    const token = registry.get('system_clubhouseToken')
+    const clubhouseApi = env.bootedServices.clubhouseApi
 
     const READY_FOR_RELEASE_IDS = WORKFLOW_MAPPINGS
       .filter(workflow => workflow.state === 'Ready for Prod')
       .map(workflow => workflow.id)
 
-    const epics = await getEpics(token)
-    const stories = await getStoriesByIteration(token, event.iterationId)
+    const epics = await clubhouseApi.getEpics()
+    const stories = await clubhouseApi.getIterationStories(event.iterationId)
 
     event.features = []
     event.bugs = []

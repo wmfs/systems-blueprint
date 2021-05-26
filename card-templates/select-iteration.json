@@ -15,8 +15,7 @@
             "sublabel": "{{ item.app_url }}"
           },
           "notFoundText": "No iterations found.",
-          "showLaunches": true,
-          "clickToLaunch": true
+          "showLaunches": true
         }
       ]
     }
