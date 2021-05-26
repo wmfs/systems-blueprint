@@ -55,6 +55,19 @@
     {
       "type": "Action.Cancel",
       "title": "Close"
+    },
+    {
+      "showWhen": "data.formattedStories.length",
+      "type": "Action.PushCard",
+      "title": "Download HTML",
+      "stateMachineName": "system_downloadProgressedStories_1_0",
+      "input": {
+        "storiesByOwner": "$.storiesByOwner",
+        "id": "$.iterationId",
+        "iterationName": "$.name",
+        "endDate": "$.endDate",
+        "exportType": "HTML"
+      }
     }
   ],
   "templateMeta": {
