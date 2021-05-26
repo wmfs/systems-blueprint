@@ -1,3 +1,12 @@
+# [1.20.0](https://github.com/wmfs/systems-blueprint/compare/v1.19.0...v1.20.0) (2021-05-26)
+
+
+### ✨ Features
+
+* better title ([e9e9c14](https://github.com/wmfs/systems-blueprint/commit/e9e9c141354520666813098fe3c37191408f4dcd))
+* downloadable progresses stories ([f9b8998](https://github.com/wmfs/systems-blueprint/commit/f9b899843765bdd4bbcdfdb2df82218810238c86))
+* refactor to use clubhouse plugin and get progressed stories for iteration ([092af30](https://github.com/wmfs/systems-blueprint/commit/092af3090e023b3c7ac76a256e64b1796d12a7c7))
+
 # [1.19.0](https://github.com/wmfs/systems-blueprint/compare/v1.18.0...v1.19.0) (2021-05-25)
 
 
