@@ -1,3 +1,10 @@
+## [1.20.1](https://github.com/wmfs/systems-blueprint/compare/v1.20.0...v1.20.1) (2021-05-26)
+
+
+### 🐛 Bug Fixes
+
+* strip out clubhouse things (into own blueprint) ([94551c3](https://github.com/wmfs/systems-blueprint/commit/94551c35c88e9f5c0033e62cbdcf8c5a7bb7a9aa))
+
 # [1.20.0](https://github.com/wmfs/systems-blueprint/compare/v1.19.0...v1.20.0) (2021-05-26)
 
 
