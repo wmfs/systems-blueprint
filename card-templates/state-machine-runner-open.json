@@ -59,9 +59,13 @@
       "title": "Close"
     },
     {
-      "showWhen": "data.fields.results.length && data.fields.results[0].errors.length === 0",
-      "type": "Action.Submit",
-      "title": "Run state machine"
+      "showWhen": "data.fields.results.length && !data.fields.results[0].errors.length",
+      "type": "Action.ReplaceCard",
+      "title": "Run state machine",
+      "stateMachineName": "system_stateMachineRunnerRun_1_0",
+      "input": {
+        "fields": "$.fields"
+      }
     }
   ],
   "templateMeta": {
