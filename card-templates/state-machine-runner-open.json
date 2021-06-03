@@ -1,0 +1,72 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "id": "fields",
+      "type": "Input.ApiLookup",
+      "showPagination": false,
+      "buttonText": "Validate",
+      "endpoint": {
+        "name": "system_stateMachineRunnerValidate_1_0"
+      },
+      "ctxPaths": {
+        "results": "results",
+        "totalHits": "totalHits"
+      },
+      "parametersCard": {
+        "type": "AdaptiveCard",
+        "version": "1.0",
+        "body": [
+          {
+            "id": "stateMachineName",
+            "type": "Input.Text",
+            "title": "State machine name"
+          },
+          {
+            "id": "input",
+            "type": "Input.Text",
+            "title": "Input",
+            "isMultiline": true,
+            "value": "{}"
+          }
+        ]
+      },
+      "resultsCard": {
+        "type": "AdaptiveCard",
+        "version": "1.0",
+        "body": [
+          {
+            "type": "Container",
+            "showWhen": "data.fields.results.length && data.fields.results[0].errors.length",
+            "color": "attention",
+            "spacing": "none",
+            "items": [
+              {
+                "type": "TextBlock",
+                "text": "{{ data.fields.results[0].errors.join(', ') }}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Close"
+    },
+    {
+      "showWhen": "data.fields.results.length && data.fields.results[0].errors.length === 0",
+      "type": "Action.Submit",
+      "title": "Run state machine"
+    }
+  ],
+  "templateMeta": {
+    "name": "state-machine-runner",
+    "title": "State Machine Runner",
+    "category": "system"
+  }
+}

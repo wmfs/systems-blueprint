@@ -1,0 +1,38 @@
+{
+  "Comment": "State Machine Runner",
+  "name": "State Machine Runner",
+  "version": "1.0",
+  "categories": [
+    "system"
+  ],
+  "instigators": [
+    "user"
+  ],
+  "instigatorGroup": "app",
+  "StartAt": "AwaitingHumanInput",
+  "States": {
+    "AwaitingHumanInput": {
+      "Type": "Task",
+      "Resource": "module:awaitingHumanInput",
+      "ResourceConfig": {
+        "uiType": "form",
+        "uiName": "system_stateMachineRunnerOpen",
+        "dataPath": "$"
+      },
+      "Next": "Run"
+    },
+    "Run": {
+      "Type": "Task",
+      "Resource": "function:system_stateMachineRunnerRun",
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "system_system",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
