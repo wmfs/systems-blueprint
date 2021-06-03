@@ -1,3 +1,11 @@
+# [1.21.0](https://github.com/wmfs/systems-blueprint/compare/v1.20.1...v1.21.0) (2021-06-03)
+
+
+### ✨ Features
+
+* state machine runner ([46ebba6](https://github.com/wmfs/systems-blueprint/commit/46ebba60e40a261765a895dd1ce402910c9fb89f))
+* view result of state machine runner ([98c9129](https://github.com/wmfs/systems-blueprint/commit/98c9129fdec5514171c6e74d020b4db6f530daab))
+
 ## [1.20.1](https://github.com/wmfs/systems-blueprint/compare/v1.20.0...v1.20.1) (2021-05-26)
 
 
