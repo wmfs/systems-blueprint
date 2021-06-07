@@ -9,8 +9,13 @@
     "user"
   ],
   "instigatorGroup": "app",
-  "StartAt": "AwaitingHumanInput",
+  "StartAt": "GetStateMachines",
   "States": {
+    "GetStateMachines": {
+      "Type": "Task",
+      "Resource": "function:system_getAvailableStateMachines",
+      "Next": "AwaitingHumanInput"
+    },
     "AwaitingHumanInput": {
       "Type": "Task",
       "Resource": "module:awaitingHumanInput",
@@ -19,11 +24,6 @@
         "uiName": "system_stateMachineRunnerOpen",
         "dataPath": "$"
       },
-      "Next": "Run"
-    },
-    "Run": {
-      "Type": "Task",
-      "Resource": "function:system_stateMachineRunnerRun",
       "End": true
     }
   },

@@ -21,8 +21,10 @@
         "body": [
           {
             "id": "stateMachineName",
-            "type": "Input.Text",
-            "title": "State machine name"
+            "type": "Input.ChoiceSet",
+            "title": "State machine name",
+            "filter": true,
+            "choicesPath": "data.availableStateMachines"
           },
           {
             "id": "input",
