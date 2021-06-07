@@ -50,6 +50,32 @@
                 "text": "{{ data.fields.results[0].errors.join(', ') }}"
               }
             ]
+          },
+          {
+            "type": "Container",
+            "showWhen": "data.fields.results.length && !data.fields.results[0].errors.length",
+            "color": "accent",
+            "spacing": "none",
+            "items": [
+              {
+                "type": "TextBlock",
+                "text": "State machine name",
+                "weight": "bolder"
+              },
+              {
+                "type": "TextBlock",
+                "text": "{{ data.fields.results[0].validated.stateMachineName }}"
+              },
+              {
+                "type": "TextBlock",
+                "text": "Input",
+                "weight": "bolder"
+              },
+              {
+                "type": "TextBlock",
+                "text": "<pre>{{ JSON.stringify(JSON.parse(data.fields.results[0].validated.input), null, 2) }}</pre>"
+              }
+            ]
           }
         ]
       }
