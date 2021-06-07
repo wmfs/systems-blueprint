@@ -25,7 +25,7 @@ module.exports = function () {
 
     if (!errors.length) {
       validated.stateMachineName = stateMachineName
-      validated.input = inputStr
+      validated.input = inputStr || '{}'
     }
 
     return {
