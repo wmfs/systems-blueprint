@@ -129,6 +129,23 @@
                 "{{ item.state_machine_name }}",
                 "{{ (item._created_by || item._modified_by) || 'No author specified' }}",
                 "{{ formatDate(item._modified, 'DD/MM/YY HH:mm') }}"
+              ],
+              "badge": [
+                {
+                  "text": "Running",
+                  "colour": "warning",
+                  "showWhen": "item.status === 'RUNNING'"
+                },
+                {
+                  "text": "Failed",
+                  "colour": "attention",
+                  "showWhen": "item.status === 'FAILED'"
+                },
+                {
+                  "text": "Succeeded",
+                  "colour": "good",
+                  "showWhen": "item.status === 'SUCCEEDED'"
+                }
               ]
             }
           }
