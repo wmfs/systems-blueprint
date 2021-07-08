@@ -1,3 +1,20 @@
+# [1.22.0](https://github.com/wmfs/systems-blueprint/compare/v1.21.0...v1.22.0) (2021-07-08)
+
+
+### ✨ Features
+
+* add badges on executions ([8e7c765](https://github.com/wmfs/systems-blueprint/commit/8e7c7654f81c15d11c5908793f42629a1e8fcf57))
+* display what state machine/input will be run once validated ([16ecbf3](https://github.com/wmfs/systems-blueprint/commit/16ecbf33277354afe87ab20d7d0573ccd07a1846))
+* get available state machines to choose from ([ddc57e1](https://github.com/wmfs/systems-blueprint/commit/ddc57e1eb85a696ce047068f9248e6b6ad6a03b4))
+
+
+### 🛠 Builds
+
+* **deps-dev:** bump mocha from 8.4.0 to 9.0.0 ([6bc7db6](https://github.com/wmfs/systems-blueprint/commit/6bc7db6fda38a9880401af3bd583395f246652bc))
+* **deps-dev:** bump mocha from 9.0.0 to 9.0.1 ([49e8185](https://github.com/wmfs/systems-blueprint/commit/49e8185269681462ee68d90befbf081933fa88d7))
+* **deps-dev:** bump mocha from 9.0.1 to 9.0.2 ([e96b174](https://github.com/wmfs/systems-blueprint/commit/e96b1746cf264514c58e13b45f262699fc69714b))
+* **deps-dev:** bump semantic-release from 17.4.3 to 17.4.4 ([46950f3](https://github.com/wmfs/systems-blueprint/commit/46950f3998ac1f2cb724b8e68f3495d32e6aa03b))
+
 # [1.21.0](https://github.com/wmfs/systems-blueprint/compare/v1.20.1...v1.21.0) (2021-06-03)
 
 
